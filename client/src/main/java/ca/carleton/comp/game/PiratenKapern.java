@@ -5,6 +5,7 @@ import ca.carleton.comp.util.RandomUtil;
 import java.util.*;
 
 public class PiratenKapern {
+
     private List<Dice> diceList;
     private List<FortuneCard> fortuneCardList;
 
@@ -16,7 +17,6 @@ public class PiratenKapern {
             Dice dice = new Dice(i);
             diceList.add(dice);
         }
-
     }
 
     public FortuneCard drawFortuneCard() {
@@ -140,7 +140,6 @@ public class PiratenKapern {
         }
 
         if (skullCount >= 3) {
-            System.out.println(Constant.DIE_WITH_SKULL);
             if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
                 rollResult = treasureChest;
             } else {
@@ -149,13 +148,28 @@ public class PiratenKapern {
         }
 
         int score = 0;
+
         score += computeSeaBattleDeductionOrBonus(rollResult, fortuneCard);
 
         int[] counts = countOnlyDice(rollResult, fortuneCard);
         score += fullChest(counts, score);
 
         countWithCard(counts, fortuneCard);
+        score += computeBaseScore(counts);
 
+        int countDiamondAndCoin = countDiamondAndCoin(rollResult, fortuneCard);
+        score += countDiamondAndCoin * 100;
+
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.captain) {
+            score = score * 2;
+        }
+
+        if (score < 0) score = 0;
+        return score;
+    }
+
+    private int computeBaseScore(int[] counts) {
+        int score = 0;
         for (int count : counts) {
             if (count == 3) {
                 score += 100;
@@ -171,16 +185,6 @@ public class PiratenKapern {
                 score += 4000;
             }
         }
-
-
-        int countDiamondAndCoin = countDiamondAndCoin(rollResult, fortuneCard);
-        score += countDiamondAndCoin * 100;
-
-        if (fortuneCard.getType() == FortuneCard.FortuneCardType.captain) {
-            score = score * 2;
-        }
-
-        if (score < 0) score = 0;
         return score;
     }
 

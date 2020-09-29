@@ -123,7 +123,12 @@ public class Player {
         rollResult = piratenKapern.roll();
         System.out.println("The roll result is " + rollResult);
 
-        doAfterRoll();
+        if (!doAfterRoll()) {
+            System.out.println(Constant.DIE_WITH_SKULL);
+            System.out.println("Score you get is " + score);
+            System.out.println("Deduction you make is " + deduction);
+            return;
+        }
 
         while (true) {
             System.out.println("Select an action: ");
@@ -138,7 +143,10 @@ public class Player {
             reRoll(indexes);
             System.out.println("The re-roll result is  " + rollResult);
 
-            doAfterRoll();
+            if (!doAfterRoll()) {
+                System.out.println(Constant.DIE_WITH_SKULL);
+                return;
+            }
         }
 
         piratenKapern.computeScore(this);
@@ -154,7 +162,7 @@ public class Player {
         }
     }
 
-    private void doAfterRoll() {
+    private boolean doAfterRoll() {
         piratenKapern.checkOnIsland(this);
         if (!piratenKapern.canContinue(this)) {
             if (piratenKapern.canReRollSkull(this)) {
@@ -165,12 +173,14 @@ public class Player {
                 piratenKapern.computeScore(this);
                 System.out.println("Score you get is " + score);
                 System.out.println("Deduction you make is " + deduction);
+                return false;
             }
         }
 
         if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
             changeTreasureChest();
         }
+        return true;
     }
 
     private void changeTreasureChest() {
