@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="client" target="13" />
-      <module name="COMP5104" target="1.5" />
+      <module name="piraten-kapern" target="1.5" />
       <module name="server" target="13" />
     </bytecodeTargetLevel>
   </component>

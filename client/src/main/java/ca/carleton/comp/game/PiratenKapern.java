@@ -16,7 +16,6 @@ public class PiratenKapern {
             Dice dice = new Dice(i);
             diceList.add(dice);
         }
-
     }
 
     public FortuneCard drawFortuneCard() {
@@ -57,7 +56,7 @@ public class PiratenKapern {
         return 0 - skullCount * 100;
     }
 
-    public int computeScoreOrDeduction(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland) {
+    public int computeScoreOrDeduction(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
         int skullCount = countSkull(rollResult, fortuneCard);
 
         if (onIsland && skullCount >= 4) {
@@ -66,13 +65,20 @@ public class PiratenKapern {
 
         if (skullCount >= 3) {
             System.out.println(Constant.DIE_WITH_SKULL);
-            return 0;
+            if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
+                rollResult = treasureChest;
+            } else {
+                return 0;
+            }
         }
 
         int score = 0;
 
+        int[] counts = countOnlyDice(rollResult, fortuneCard);
+        score += fullChest(counts);
 
-        int[] counts = countSameSides(rollResult, fortuneCard);
+        updateCountWithCard(counts, fortuneCard);
+
         for (int count : counts) {
             if (count == 3) {
                 score += 100;
@@ -89,7 +95,8 @@ public class PiratenKapern {
             }
         }
 
-        score += fullChest(rollResult);
+
+        score += computeSeaBattleDeductionOrBonus(rollResult, fortuneCard);
 
         int countDiamondAndCoin = countDiamondAndCoin(rollResult, fortuneCard);
         score += countDiamondAndCoin * 100;
@@ -102,25 +109,7 @@ public class PiratenKapern {
         return score;
     }
 
-    private int fullChest(Map<Integer, Dice.DiceSide> rollResult) {
-        int[] counts = countOnlyDice(rollResult);
-        for (int count : counts) {
-            if (count < 3) {
-                return 0;
-            }
-        }
-        return 500;
-    }
-
-    private int[] countSameSides(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
-        int[] counts = countOnlyDice(rollResult);
-
-        if (fortuneCard.getType() == FortuneCard.FortuneCardType.monkey_business) {
-            int index = Dice.DiceSide.monkey.getIndex();
-            int index1 = Dice.DiceSide.parrot.getIndex();
-            counts[index] = counts[index] + counts[index1];
-            counts[index1] = 0;
-        }
+    private int[] updateCountWithCard(int[] counts, FortuneCard fortuneCard) {
 
         if (fortuneCard.getType() == FortuneCard.FortuneCardType.diamonds) {
             int index = Dice.DiceSide.diamond.getIndex();
@@ -135,13 +124,76 @@ public class PiratenKapern {
         return counts;
     }
 
-    private int[] countOnlyDice(Map<Integer, Dice.DiceSide> rollResult) {
+    public int computeSeaBattleDeductionOrBonus(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.two_sabre) {
+            int swordCount = countSword(rollResult);
+            if (swordCount == 2) {
+                return 300;
+            } else {
+                return -300;
+            }
+        }
+
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.three_sabre) {
+            int swordCount = countSword(rollResult);
+            if (swordCount == 3) {
+                return 500;
+            } else {
+                return -500;
+            }
+        }
+
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.four_sabre) {
+            int swordCount = countSword(rollResult);
+            if (swordCount == 4) {
+                return 1000;
+            } else {
+                return -1000;
+            }
+        }
+        return 0;
+    }
+
+    private int countSword(Map<Integer, Dice.DiceSide> rollResult) {
+        int count = 0;
+        Set<Map.Entry<Integer, Dice.DiceSide>> entries = rollResult.entrySet();
+        for (Map.Entry<Integer, Dice.DiceSide> entry : entries) {
+            if (entry.getValue() == Dice.DiceSide.sword) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    private int fullChest(int[] counts) {
+        int used = 0;
+        for (int i = 0; i < counts.length; i++) {
+            if (counts[i] >= 3 || Dice.DiceSide.getByIndex(i) == Dice.DiceSide.coin ||
+                    Dice.DiceSide.getByIndex(i) == Dice.DiceSide.diamond) {
+                used += counts[i];
+            }
+        }
+        if (used == 8) {
+            return 500;
+        }
+        return 0;
+    }
+
+    private int[] countOnlyDice(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
         int[] counts = new int[6];
 
         Set<Map.Entry<Integer, Dice.DiceSide>> entries = rollResult.entrySet();
         for (Map.Entry<Integer, Dice.DiceSide> entry : entries) {
             int index = entry.getValue().getIndex();
             counts[index]++;
+        }
+
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.monkey_business) {
+            int index = Dice.DiceSide.monkey.getIndex();
+            int index1 = Dice.DiceSide.parrot.getIndex();
+            counts[index] = counts[index] + counts[index1];
+            counts[index1] = 0;
         }
         return counts;
     }
