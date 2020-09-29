@@ -351,4 +351,378 @@ public class Part1Test {
         assertEquals(800, score);
     }
 
+    @Test
+    public void score61Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.captain);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.coin);
+        diceSideMap.put(2, Dice.DiceSide.coin);
+        diceSideMap.put(3, Dice.DiceSide.coin);
+        diceSideMap.put(4, Dice.DiceSide.sword);
+        diceSideMap.put(5, Dice.DiceSide.sword);
+        diceSideMap.put(6, Dice.DiceSide.parrot);
+        diceSideMap.put(7, Dice.DiceSide.parrot);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(1200, score);
+    }
+
+    @Test
+    public void score62Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.skull);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.sword);
+        diceSideMap.put(5, Dice.DiceSide.sword);
+        diceSideMap.put(6, Dice.DiceSide.parrot);
+        diceSideMap.put(7, Dice.DiceSide.parrot);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        indexes = new ArrayList<>(Arrays.asList(2, 3));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(2, Dice.DiceSide.sword);
+        diceSideMap.put(3, Dice.DiceSide.parrot);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(600, score);
+    }
+
+    @Test
+    public void score63Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.skull);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.monkey);
+        diceSideMap.put(5, Dice.DiceSide.monkey);
+        diceSideMap.put(6, Dice.DiceSide.monkey);
+        diceSideMap.put(7, Dice.DiceSide.monkey);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(1100, score);
+    }
+
+    @Test
+    public void score64Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.parrot);
+        diceSideMap.put(2, Dice.DiceSide.parrot);
+        diceSideMap.put(3, Dice.DiceSide.parrot);
+        diceSideMap.put(4, Dice.DiceSide.parrot);
+        diceSideMap.put(5, Dice.DiceSide.parrot);
+        diceSideMap.put(6, Dice.DiceSide.parrot);
+        diceSideMap.put(7, Dice.DiceSide.parrot);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(2100, score);
+    }
+
+    @Test
+    public void score65Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.coin);
+        diceSideMap.put(1, Dice.DiceSide.coin);
+        diceSideMap.put(2, Dice.DiceSide.coin);
+        diceSideMap.put(3, Dice.DiceSide.coin);
+        diceSideMap.put(4, Dice.DiceSide.coin);
+        diceSideMap.put(5, Dice.DiceSide.coin);
+        diceSideMap.put(6, Dice.DiceSide.coin);
+        diceSideMap.put(7, Dice.DiceSide.coin);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(5400, score);
+    }
+
+    @Test
+    public void score66Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.diamonds);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.coin);
+        diceSideMap.put(1, Dice.DiceSide.coin);
+        diceSideMap.put(2, Dice.DiceSide.coin);
+        diceSideMap.put(3, Dice.DiceSide.coin);
+        diceSideMap.put(4, Dice.DiceSide.coin);
+        diceSideMap.put(5, Dice.DiceSide.coin);
+        diceSideMap.put(6, Dice.DiceSide.coin);
+        diceSideMap.put(7, Dice.DiceSide.coin);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(5400, score);
+    }
+
+    @Test
+    public void score67Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.captain);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.sword);
+        diceSideMap.put(1, Dice.DiceSide.sword);
+        diceSideMap.put(2, Dice.DiceSide.sword);
+        diceSideMap.put(3, Dice.DiceSide.sword);
+        diceSideMap.put(4, Dice.DiceSide.sword);
+        diceSideMap.put(5, Dice.DiceSide.sword);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(9000, score);
+    }
+
+    @Test
+    public void score68Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.monkey);
+        diceSideMap.put(1, Dice.DiceSide.monkey);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.monkey);
+        diceSideMap.put(5, Dice.DiceSide.monkey);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.monkey);
+        diceSideMap.put(7, Dice.DiceSide.monkey);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(4600, score);
+    }
+
+    @Test
+    public void score69Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.diamonds);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.skull);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.parrot);
+        diceSideMap.put(5, Dice.DiceSide.parrot);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.diamond);
+        diceSideMap.put(7, Dice.DiceSide.diamond);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(400, score);
+    }
+
+    @Test
+    public void score70Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.skull);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.parrot);
+        diceSideMap.put(5, Dice.DiceSide.diamond);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.diamond);
+        diceSideMap.put(7, Dice.DiceSide.diamond);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(500, score);
+    }
+
+    @Test
+    public void score71Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.skull);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.parrot);
+        diceSideMap.put(5, Dice.DiceSide.coin);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.coin);
+        diceSideMap.put(7, Dice.DiceSide.coin);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(600, score);
+    }
+
+    @Test
+    public void score72Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.diamonds);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.skull);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.parrot);
+        diceSideMap.put(5, Dice.DiceSide.coin);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.coin);
+        diceSideMap.put(7, Dice.DiceSide.coin);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(500, score);
+    }
+
+    @Test
+    public void score73Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.skull);
+        diceSideMap.put(1, Dice.DiceSide.monkey);
+        diceSideMap.put(2, Dice.DiceSide.monkey);
+        diceSideMap.put(3, Dice.DiceSide.monkey);
+        diceSideMap.put(4, Dice.DiceSide.monkey);
+        diceSideMap.put(5, Dice.DiceSide.parrot);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.sword);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        piratenKapern.reRoll(indexes, diceSideMap);
+        // change the random dice to fixed one
+        diceSideMap.put(6, Dice.DiceSide.coin);
+        diceSideMap.put(7, Dice.DiceSide.coin);
+
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
+        assertEquals(600, score);
+    }
+
+    @Test
+    public void score75Test() {
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> diceSideMap = piratenKapern.roll();
+        // change the random dice to fixed one
+        diceSideMap.put(0, Dice.DiceSide.sword);
+        diceSideMap.put(1, Dice.DiceSide.sword);
+        diceSideMap.put(2, Dice.DiceSide.sword);
+        diceSideMap.put(3, Dice.DiceSide.sword);
+        diceSideMap.put(4, Dice.DiceSide.sword);
+        diceSideMap.put(5, Dice.DiceSide.sword);
+        diceSideMap.put(6, Dice.DiceSide.sword);
+        diceSideMap.put(7, Dice.DiceSide.monkey);
+
+        //re-roll
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(7));
+        boolean reRoll = piratenKapern.reRoll(indexes, diceSideMap);
+        assertEquals(false, reRoll);
+        assertEquals(Constant.RE_ROLL_COUNT_CONSTRAINT + "\n", outContent.toString());
+
+    }
 }
