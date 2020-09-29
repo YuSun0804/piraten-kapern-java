@@ -4,12 +4,8 @@ import ca.carleton.comp.game.Constant;
 import ca.carleton.comp.game.Dice;
 import ca.carleton.comp.game.FortuneCard;
 import ca.carleton.comp.game.PiratenKapern;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,22 +17,6 @@ import static org.junit.Assert.assertEquals;
 public class Part1Test {
 
     private PiratenKapern piratenKapern = new PiratenKapern();
-    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final PrintStream originalErr = System.err;
-
-    @Before
-    public void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
-
-    @After
-    public void restoreStreams() {
-        System.setOut(originalOut);
-        System.setErr(originalErr);
-    }
 
     @Test
     public void score48Test() {
@@ -55,9 +35,11 @@ public class Part1Test {
         rollResult.put(5, Dice.DiceSide.monkey);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.monkey);
+        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
+        assertEquals(true, isDied);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
-        assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
+
     }
 
     @Test
@@ -84,9 +66,10 @@ public class Part1Test {
         rollResult.put(5, Dice.DiceSide.skull);
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.sword);
+        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
+        assertEquals(true, isDied);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
-        assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
 
     @Test
@@ -113,9 +96,10 @@ public class Part1Test {
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.sword);
 
+        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
+        assertEquals(true, isDied);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
-        assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
 
     @Test
@@ -150,9 +134,10 @@ public class Part1Test {
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.monkey);
 
+        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
+        assertEquals(true, isDied);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
-        assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
 
     @Test
