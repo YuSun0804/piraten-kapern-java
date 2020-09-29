@@ -284,19 +284,30 @@ public class PiratenKapern {
     }
 
     public boolean canContinue(Player player) {
-        int count = countSkull(player.getRollResult(), player.getFortuneCard());
-
-        if (player.isOnIsland() && canContinueOnIsland(count, player.getPreSkullCount())) {
-            player.setOnIsland(true);
-            player.setPreSkullCount(count);
-            return true;
+        if (player.isOnIsland()) {
+            int count = canContinueOnIsland(player.getRollResult(), player.getFortuneCard(), player.getPreSkullCount());
+            if (count > 0) {
+                player.setOnIsland(true);
+                player.setPreSkullCount(count);
+                return true;
+            } else {
+                return false;
+            }
         }
+        return canContinue(player.getRollResult(), player.getFortuneCard());
+    }
 
+    public boolean canContinue(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
+        int count = countSkull(rollResult, fortuneCard);
         return count != 3;
     }
 
-    public boolean canContinueOnIsland(int count, int preSkullCount) {
-        return count > preSkullCount;
+    public int canContinueOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, int preSkullCount) {
+        int count = countSkull(rollResult, fortuneCard);
+        if (count > preSkullCount) {
+            return count;
+        }
+        return 0;
     }
 
     public void checkOnIsland(Player player) {
@@ -331,5 +342,6 @@ public class PiratenKapern {
             }
         }
     }
+
 
 }

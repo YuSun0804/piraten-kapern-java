@@ -18,7 +18,7 @@ import static org.junit.Assert.assertTrue;
 
 public class Part2Test {
     private PiratenKapern piratenKapern = new PiratenKapern();
-    
+
     @Test
     public void sorceress80Test() {
         // draw fortune card
@@ -286,8 +286,8 @@ public class Part2Test {
         rollResult.put(3, Dice.DiceSide.skull);
         rollResult.put(4, Dice.DiceSide.coin);
 
-        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
-        assertEquals(true, isDied);
+        boolean canContinue=piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, treasureChest);
         assertEquals(600, score);
     }

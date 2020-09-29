@@ -35,8 +35,8 @@ public class Part1Test {
         rollResult.put(5, Dice.DiceSide.monkey);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.monkey);
-        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
-        assertEquals(true, isDied);
+        boolean canContinue=piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
 
@@ -66,8 +66,8 @@ public class Part1Test {
         rollResult.put(5, Dice.DiceSide.skull);
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.sword);
-        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
-        assertEquals(true, isDied);
+        boolean canContinue=piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
     }
@@ -96,8 +96,8 @@ public class Part1Test {
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.sword);
 
-        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
-        assertEquals(true, isDied);
+        boolean canContinue=piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
     }
@@ -134,8 +134,8 @@ public class Part1Test {
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.monkey);
 
-        boolean isDied=piratenKapern.canContinue(rollResult, fortuneCard, false, 0);
-        assertEquals(true, isDied);
+        boolean canContinue=piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(0, score);
     }
@@ -707,7 +707,6 @@ public class Part1Test {
         List<Integer> indexes = new ArrayList<>(Arrays.asList(7));
         boolean reRoll = piratenKapern.reRoll(indexes, rollResult);
         assertEquals(false, reRoll);
-        assertEquals(Constant.RE_ROLL_COUNT_CONSTRAINT + "\n", outContent.toString());
 
     }
 }
