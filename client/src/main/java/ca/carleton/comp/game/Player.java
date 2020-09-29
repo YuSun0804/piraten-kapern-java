@@ -1,5 +1,8 @@
 package ca.carleton.comp.game;
 
+import ca.carleton.comp.network.ClientChannel;
+
+import java.io.IOException;
 import java.util.*;
 
 public class Player {
@@ -16,6 +19,9 @@ public class Player {
     private int deduction;
 
     private Map<Integer, Dice.DiceSide> treasureChest;
+
+    private ClientChannel clientChannel;
+    private String name;
 
     public boolean isOnIsland() {
         return onIsland;
@@ -83,10 +89,27 @@ public class Player {
 
     private Map<Integer, Dice.DiceSide> rollResult;
 
-    public Player(PiratenKapern piratenKapern) {
+    public Player(PiratenKapern piratenKapern, ClientChannel clientChannel) {
         this.piratenKapern = piratenKapern;
         this.scanner = new Scanner(System.in);
         this.treasureChest = new HashMap<>();
+        this.clientChannel = clientChannel;
+        initPlayer();
+
+    }
+
+    private void initPlayer() {
+        System.out.print("What is your name ? ");
+        Scanner scanner = new Scanner(System.in);
+        name = scanner.next();
+        try {
+            clientChannel.write(name);
+            String response = clientChannel.readString();
+            System.out.println(response);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void play() {
@@ -121,6 +144,14 @@ public class Player {
         piratenKapern.computeScore(this);
         System.out.println("Score you get is " + score);
         System.out.println("Deduction you make is " + deduction);
+
+        try {
+            clientChannel.write(score + "," + deduction);
+            String result = clientChannel.readString();
+            System.out.println(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void doAfterRoll() {
@@ -169,5 +200,13 @@ public class Player {
         }
         piratenKapern.reRoll(this, indexList);
 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/GameClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/network/ClientChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +42,7 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="ca.carleton.comp" />
+      <recent name="ca.carleton.comp.network" />
       <recent name="ca.carleton.comp.game" />
     </key>
   </component>
@@ -99,7 +103,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601351150012</updated>
-      <workItem from="1601351151411" duration="7097000" />
+      <workItem from="1601351151411" duration="7413000" />
     </task>
     <servers />
   </component>

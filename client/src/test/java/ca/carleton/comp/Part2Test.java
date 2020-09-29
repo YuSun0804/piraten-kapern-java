@@ -218,4 +218,6 @@ public class Part2Test {
         int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(2000, score);
     }
+
+
 }
