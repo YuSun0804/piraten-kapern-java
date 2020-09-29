@@ -48,4 +48,24 @@ public class ScoreTest {
         assertEquals(1900, score);
     }
 
+    @Test
+    public void computeWinner3() {
+        ScoreRecord scoreRecord1 = new ScoreRecord(1, "p1", 0, -100);
+        ScoreRecord scoreRecord2 = new ScoreRecord(2, "p2", 100, 0);
+        ScoreRecord scoreRecord3 = new ScoreRecord(3, "p3", 3000, 0);
+        scorePad.addScoreRecord(scoreRecord1);
+        scorePad.addScoreRecord(scoreRecord2);
+        scorePad.addScoreRecord(scoreRecord3);
+        ScoreRecord winner = scorePad.computeWinner();
+        assertEquals(3, winner.getPlayerIndex());
+        assertEquals(2900, winner.getFinalScore());
+
+        scoreRecord1.setClientScore(0);
+        scoreRecord2.setClientScore(100);
+        scoreRecord3.setClientScore(3500);
+
+        winner = scorePad.computeWinner();
+        assertEquals(3, winner.getPlayerIndex());
+        assertEquals(6300, winner.getFinalScore());
+    }
 }
