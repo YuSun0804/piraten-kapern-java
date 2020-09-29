@@ -5,3 +5,4 @@ ca/carleton/comp/game/Dice$DiceSide.class
 ca/carleton/comp/util/RandomUtil.class
 ca/carleton/comp/game/Dice.class
 ca/carleton/comp/game/Constant.class
+ca/carleton/comp/game/Player.class

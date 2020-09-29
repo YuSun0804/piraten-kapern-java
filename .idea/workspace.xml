@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part1Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part1Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +41,11 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ca.carleton.comp.game" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -77,7 +88,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601351150012</updated>
-      <workItem from="1601351151411" duration="3705000" />
+      <workItem from="1601351151411" duration="5161000" />
     </task>
     <servers />
   </component>
@@ -85,21 +96,21 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601354405745">
+    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601355209266">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601354405745" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601354405745">
+    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601355209266" />
+    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601355209265">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601354405745" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601354405745">
+    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601355209265" />
+    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601355209265">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601354405745" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601354405745">
+    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601355209265" />
+    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601355209265">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601354405745" />
+    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601355209265" />
   </component>
 </project>
