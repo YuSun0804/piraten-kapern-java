@@ -8,6 +8,10 @@ public class ScoreRecord {
     private int clientScore;
     private int deduction;
 
+    public ScoreRecord(int playerIndex) {
+        this.playerIndex = playerIndex;
+    }
+
     public ScoreRecord() {
     }
 
@@ -16,7 +20,6 @@ public class ScoreRecord {
         this.playerName = playerName;
         this.clientScore = clientScore;
         this.deduction = deduction;
-        this.finalScore = clientScore;
     }
 
     public String getPlayerName() {

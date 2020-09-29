@@ -18,6 +18,15 @@ public class ScorePad {
         scoreRecordList.add(scoreRecord);
     }
 
+    public ScoreRecord getByPlayerIndex(int playerIndex) {
+        for (ScoreRecord scoreRecord : scoreRecordList) {
+            if (scoreRecord.getPlayerIndex() == playerIndex) {
+                return scoreRecord;
+            }
+        }
+        return null;
+    }
+
     public int computeScore(int playerIndex) {
         for (ScoreRecord scoreRecord : scoreRecordList) {
             if (scoreRecord.getPlayerIndex() == playerIndex) {
@@ -29,9 +38,10 @@ public class ScorePad {
 
     public ScoreRecord computeWinner() {
         updateFinalScore();
+
         ScoreRecord winner = new ScoreRecord();
         for (ScoreRecord scoreRecord : scoreRecordList) {
-            if (scoreRecord.getFinalScore() > winner.getFinalScore()) {
+            if (scoreRecord.getFinalScore() >= winner.getFinalScore()) {
                 winner.setFinalScore(scoreRecord.getFinalScore());
                 winner.setPlayerIndex(scoreRecord.getPlayerIndex());
                 winner.setPlayerName(scoreRecord.getPlayerName());
@@ -41,16 +51,15 @@ public class ScorePad {
     }
 
     private void updateFinalScore() {
-        for (ScoreRecord deductionRecord : scoreRecordList) {
-            if (deductionRecord.getDeduction() == 0) continue;
-
-            for (ScoreRecord scoreRecord : scoreRecordList) {
-                if (scoreRecord != deductionRecord) continue;
-
-                int finalScore = scoreRecord.getFinalScore() + deductionRecord.getDeduction();
-                finalScore = finalScore > 0 ? finalScore : 0;
-                scoreRecord.setFinalScore(finalScore);
+        for (ScoreRecord scoreRecord : scoreRecordList) {
+            int deduction = 0;
+            for (ScoreRecord otherRecord : scoreRecordList) {
+                if (otherRecord.getDeduction() < 0) {
+                    deduction += otherRecord.getDeduction();
+                }
             }
+            int score = scoreRecord.getFinalScore() + scoreRecord.getClientScore() + deduction;
+            scoreRecord.setFinalScore(score);
         }
     }
 }
