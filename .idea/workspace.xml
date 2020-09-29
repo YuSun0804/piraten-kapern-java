@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/GameClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/network/ClientChannel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1601351150012</updated>
-      <workItem from="1601351151411" duration="7413000" />
+      <workItem from="1601351151411" duration="8775000" />
     </task>
     <servers />
   </component>
@@ -111,21 +108,21 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601360516591">
+    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601386602414">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601360516591" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601360516591">
+    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601386602414" />
+    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601386602414">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601360516591" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601360516590">
+    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601386602414" />
+    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601386602414">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601360516590" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601360516591">
+    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601386602414" />
+    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601386602414">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601360516591" />
+    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601386602414" />
   </component>
 </project>
