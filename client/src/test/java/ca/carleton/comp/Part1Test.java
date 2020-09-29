@@ -1,6 +1,5 @@
 package ca.carleton.comp;
 
-import ca.carleton.comp.game.Constant;
 import ca.carleton.comp.game.Dice;
 import ca.carleton.comp.game.FortuneCard;
 import ca.carleton.comp.game.PiratenKapern;

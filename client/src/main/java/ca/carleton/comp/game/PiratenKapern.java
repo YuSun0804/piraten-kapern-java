@@ -38,6 +38,20 @@ public class PiratenKapern {
         return map;
     }
 
+    public boolean reRoll(List<Integer> indexes, Map<Integer, Dice.DiceSide> rollResult) {
+        if (indexes.size() < 2) {
+            System.out.println(Constant.RE_ROLL_COUNT_CONSTRAINT);
+            return false;
+        }
+        for (Integer index : indexes) {
+            Dice dice = diceList.get(index);
+            Dice.DiceSide diceSide = dice.roll();
+            rollResult.put(index, diceSide);
+        }
+
+        return true;
+    }
+
     public int computeDeductionOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
         int skullCount = countSkull(rollResult, fortuneCard);
         return 0 - skullCount * 100;
