@@ -1,6 +1,8 @@
 package ca.carleton.comp;
 
 
+import ca.carleton.comp.game.ScorePad;
+import ca.carleton.comp.game.ScoreRecord;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

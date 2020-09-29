@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/ScorePad.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/ScoreRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/ca/carleton/comp/ScoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/ca/carleton/comp/ScoreTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +39,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ca.carleton.comp" />
       <recent name="ca.carleton.comp.network" />
+      <recent name="ca.carleton.comp" />
       <recent name="ca.carleton.comp.game" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game" />
     </key>
   </component>
   <component name="RunManager" selected="JUnit.TestAll">
@@ -164,22 +168,22 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601396904400">
+    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601400978956">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396904400" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601396904400">
+    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978956" />
+    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601400978955">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396904400" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601396904400">
+    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978955" />
+    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601400978955">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396904400" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601396904400">
+    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978955" />
+    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601400978955">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396904400" />
+    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978955" />
     <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601396843598">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
