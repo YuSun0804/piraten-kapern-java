@@ -48,28 +48,13 @@
       <recent name="ca.carleton.comp.game" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Part2Test">
+  <component name="RunManager" selected="JUnit.TestAll">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.carleton.comp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part1Test" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,13 +123,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.carleton.comp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.TestAll" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestAll" />
         <item itemvalue="JUnit.Part2Test" />
         <item itemvalue="JUnit.Part2Test.seaBattle123Test" />
         <item itemvalue="JUnit.Part2Test.seaBattle122Test" />
         <item itemvalue="JUnit.Part2Test.seaBattle120Test" />
-        <item itemvalue="JUnit.Part1Test" />
       </list>
     </recent_temporary>
   </component>
