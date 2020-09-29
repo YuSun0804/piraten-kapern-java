@@ -55,7 +55,7 @@ public class Part1Test {
         diceSideMap.put(5, Dice.DiceSide.monkey);
         diceSideMap.put(6, Dice.DiceSide.monkey);
         diceSideMap.put(7, Dice.DiceSide.monkey);
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(0, score);
         assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
@@ -84,7 +84,7 @@ public class Part1Test {
         diceSideMap.put(5, Dice.DiceSide.skull);
         diceSideMap.put(6, Dice.DiceSide.skull);
         diceSideMap.put(7, Dice.DiceSide.sword);
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(0, score);
         assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
@@ -113,7 +113,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.skull);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(0, score);
         assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
@@ -150,7 +150,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.skull);
         diceSideMap.put(7, Dice.DiceSide.monkey);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(0, score);
         assertEquals(Constant.DIE_WITH_SKULL + "\n", outContent.toString());
     }
@@ -173,7 +173,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.coin);
         diceSideMap.put(7, Dice.DiceSide.coin);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(800, score);
     }
 
@@ -201,7 +201,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.sword);
         diceSideMap.put(7, Dice.DiceSide.monkey);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(200, score);
     }
 
@@ -223,7 +223,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.sword);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(300, score);
     }
 
@@ -252,7 +252,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.parrot);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(300, score);
     }
 
@@ -274,7 +274,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.sword);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(500, score);
     }
 
@@ -296,7 +296,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.sword);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(700, score);
     }
 
@@ -318,7 +318,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.sword);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(400, score);
     }
 
@@ -347,7 +347,7 @@ public class Part1Test {
         diceSideMap.put(6, Dice.DiceSide.sword);
         diceSideMap.put(7, Dice.DiceSide.sword);
 
-        int score = piratenKapern.computeScoreOrDeduction(diceSideMap, fortuneCard, false, null);
+        int score = piratenKapern.computeScore(diceSideMap, fortuneCard, false, null);
         assertEquals(800, score);
     }
 

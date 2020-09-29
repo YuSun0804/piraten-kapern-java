@@ -56,7 +56,7 @@ public class PiratenKapern {
         return 0 - skullCount * 100;
     }
 
-    public int computeScoreOrDeduction(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
+    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
         int skullCount = countSkull(rollResult, fortuneCard);
 
         if (onIsland && skullCount >= 4) {
