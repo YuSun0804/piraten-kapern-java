@@ -123,6 +123,7 @@ public class Player {
         rollResult = piratenKapern.roll();
         System.out.println("The roll result is " + rollResult);
 
+        piratenKapern.checkOnIsland(this);
         if (!doAfterRoll()) {
             System.out.println(Constant.DIE_WITH_SKULL);
             System.out.println("Score you get is " + score);
@@ -163,7 +164,6 @@ public class Player {
     }
 
     private boolean doAfterRoll() {
-        piratenKapern.checkOnIsland(this);
         if (!piratenKapern.canContinue(this)) {
             if (piratenKapern.canReRollSkull(this)) {
                 System.out.println("One of the skull dice will re-roll, since you have a sorceress card");

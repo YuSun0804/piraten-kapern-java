@@ -1,15 +1,10 @@
 package ca.carleton.comp;
 
-import ca.carleton.comp.game.Constant;
 import ca.carleton.comp.game.Dice;
 import ca.carleton.comp.game.FortuneCard;
 import ca.carleton.comp.game.PiratenKapern;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.*;
 
 import static org.junit.Assert.assertEquals;
@@ -578,7 +573,9 @@ public class Part2Test {
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
 
-        int deduction = piratenKapern.computeSeaBattleDeductionOrBonus(rollResult, fortuneCard);
+        boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
+        int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         assertEquals(-300, deduction);
     }
 
@@ -600,7 +597,9 @@ public class Part2Test {
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
 
-        int deduction = piratenKapern.computeSeaBattleDeductionOrBonus(rollResult, fortuneCard);
+        boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
+        int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         assertEquals(-500, deduction);
     }
 
@@ -622,7 +621,9 @@ public class Part2Test {
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
 
-        int deduction = piratenKapern.computeSeaBattleDeductionOrBonus(rollResult, fortuneCard);
+        boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
+        assertEquals(false, canContinue);
+        int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         assertEquals(-1000, deduction);
     }
 
@@ -771,19 +772,19 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.parrot);
 
         //re-roll
-        List<Integer> indexes = new ArrayList<>(Arrays.asList(6,7));
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.sword);
 
         //re-roll
-        indexes = new ArrayList<>(Arrays.asList(1,2,3));
+        indexes = new ArrayList<>(Arrays.asList(0, 1, 2));
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
-        rollResult.put(1, Dice.DiceSide.sword);
+        rollResult.put(0, Dice.DiceSide.sword);
+        rollResult.put(1, Dice.DiceSide.parrot);
         rollResult.put(2, Dice.DiceSide.parrot);
-        rollResult.put(3, Dice.DiceSide.parrot);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(1300, score);

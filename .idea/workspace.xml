@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +25,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1iAX0j7sRfH5ok10946k6TM1xF3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

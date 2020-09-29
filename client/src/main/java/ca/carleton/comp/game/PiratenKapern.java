@@ -102,10 +102,10 @@ public class PiratenKapern {
 
     }
 
-    public int computeSeaBattleDeductionOrBonus(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
+    public int computeSeaBattle(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean isAlive) {
         if (fortuneCard.getType() == FortuneCard.FortuneCardType.two_sabre) {
             int swordCount = countSword(rollResult);
-            if (swordCount == 2) {
+            if (swordCount >= 2 && isAlive) {
                 return 300;
             } else {
                 return -300;
@@ -114,7 +114,7 @@ public class PiratenKapern {
 
         if (fortuneCard.getType() == FortuneCard.FortuneCardType.three_sabre) {
             int swordCount = countSword(rollResult);
-            if (swordCount == 3) {
+            if (swordCount >= 3 && isAlive) {
                 return 500;
             } else {
                 return -500;
@@ -123,7 +123,7 @@ public class PiratenKapern {
 
         if (fortuneCard.getType() == FortuneCard.FortuneCardType.four_sabre) {
             int swordCount = countSword(rollResult);
-            if (swordCount == 4) {
+            if (swordCount >= 4 && isAlive) {
                 return 1000;
             } else {
                 return -1000;
@@ -149,7 +149,7 @@ public class PiratenKapern {
 
         int score = 0;
 
-        score += computeSeaBattleDeductionOrBonus(rollResult, fortuneCard);
+        score += computeSeaBattle(rollResult, fortuneCard, true);
 
         int[] counts = countOnlyDice(rollResult, fortuneCard);
         score += fullChest(counts, score);
@@ -299,7 +299,7 @@ public class PiratenKapern {
 
     public boolean canContinue(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
         int count = countSkull(rollResult, fortuneCard);
-        return count != 3;
+        return count < 3;
     }
 
     public int canContinueOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, int preSkullCount) {
