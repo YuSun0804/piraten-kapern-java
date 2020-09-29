@@ -38,98 +38,9 @@ public class PiratenKapern {
         return map;
     }
 
-
-    public boolean reRoll(Player player, List<Integer> indexList) {
-        return reRoll(indexList, player.getRollResult());
-    }
-
-    public boolean reRoll(List<Integer> indexes, Map<Integer, Dice.DiceSide> rollResult) {
-        if (indexes.size() < 2) {
-            System.out.println(Constant.RE_ROLL_COUNT_CONSTRAINT);
-            return false;
-        }
-        for (Integer index : indexes) {
-            Dice dice = diceList.get(index);
-            Dice.DiceSide diceSide = dice.roll();
-            rollResult.put(index, diceSide);
-        }
-
-        return true;
-    }
-
-    public boolean reRollForSorceress(Player player) {
-        reRollForSorceress(player.getRollResult());
-        player.setFortuneCardUsed(true);
-        return true;
-    }
-
-    public boolean reRollForSorceress(Map<Integer, Dice.DiceSide> rollResult) {
-        Dice oneSkull = getOneSkull(rollResult);
-        Dice.DiceSide diceSide = oneSkull.roll();
-        while (diceSide == Dice.DiceSide.skull) {
-            diceSide = oneSkull.roll();
-        }
-        rollResult.put(oneSkull.getIndex(), diceSide);
-        return true;
-    }
-
-    private Dice getOneSkull(Map<Integer, Dice.DiceSide> rollResult) {
-        Set<Map.Entry<Integer, Dice.DiceSide>> entries = rollResult.entrySet();
-        for (Map.Entry<Integer, Dice.DiceSide> entry : entries) {
-            if (entry.getValue() == Dice.DiceSide.skull) {
-                Dice dice = diceList.get(entry.getKey());
-                return dice;
-            }
-        }
-        return null;
-    }
-
-    public void computeScoreOrDeduction(Player player) {
-        int scoreOrDeduction = computeScoreOrDeduction(player.getRollResult(), player.getFortuneCard(), player.isOnIsland());
-        if (computeScoreOrDeduction(player.getRollResult(), player.getFortuneCard(), player.isOnIsland()) < 0) {
-            player.setDeduction(scoreOrDeduction);
-            player.setScore(0);
-        } else {
-            player.setDeduction(0);
-            player.setScore(scoreOrDeduction);
-        }
-
-    }
-
     public int computeDeductionOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
         int skullCount = countSkull(rollResult, fortuneCard);
         return 0 - skullCount * 100;
-
-    }
-
-    public int computeSeaBattleDeductionOrBonus(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
-        if (fortuneCard.getType() == FortuneCard.FortuneCardType.two_sabre) {
-            int swordCount = countSword(rollResult);
-            if (swordCount == 2) {
-                return 300;
-            } else {
-                return -300;
-            }
-        }
-
-        if (fortuneCard.getType() == FortuneCard.FortuneCardType.three_sabre) {
-            int swordCount = countSword(rollResult);
-            if (swordCount == 3) {
-                return 500;
-            } else {
-                return -500;
-            }
-        }
-
-        if (fortuneCard.getType() == FortuneCard.FortuneCardType.four_sabre) {
-            int swordCount = countSword(rollResult);
-            if (swordCount == 4) {
-                return 1000;
-            } else {
-                return -1000;
-            }
-        }
-        return 0;
     }
 
     public int computeScoreOrDeduction(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland) {
@@ -237,18 +148,6 @@ public class PiratenKapern {
         return count;
     }
 
-    private int countSword(Map<Integer, Dice.DiceSide> rollResult) {
-        int count = 0;
-        Set<Map.Entry<Integer, Dice.DiceSide>> entries = rollResult.entrySet();
-        for (Map.Entry<Integer, Dice.DiceSide> entry : entries) {
-            if (entry.getValue() == Dice.DiceSide.sword) {
-                count++;
-            }
-        }
-
-        return count;
-    }
-
     public int countSkull(Map<Integer, Dice.DiceSide> diceSideMap, FortuneCard fortuneCard) {
         int count = 0;
         Set<Map.Entry<Integer, Dice.DiceSide>> entries = diceSideMap.entrySet();
@@ -266,55 +165,6 @@ public class PiratenKapern {
         }
 
         return count;
-    }
-
-    public boolean canContinue(Player player) {
-        int count = countSkull(player.getRollResult(), player.getFortuneCard());
-
-        if (player.isOnIsland() && canContinueOnIsland(count, player.getPreSkullCount())) {
-            player.setOnIsland(true);
-            player.setPreSkullCount(count);
-            return true;
-        }
-
-        return count != 3;
-    }
-
-    public boolean canContinueOnIsland(int count, int preSkullCount) {
-        return count > preSkullCount;
-    }
-
-    public void checkOnIsland(Player player) {
-        int count = countSkull(player.getRollResult(), player.getFortuneCard());
-        if (count >= 4) {
-            player.setOnIsland(true);
-        }
-    }
-
-    public boolean canReRollSkull(Player player) {
-        if (player.getFortuneCard().getType() == FortuneCard.FortuneCardType.sorceress &&
-                !player.isFortuneCardUsed() && !player.isOnIsland()) {
-            return true;
-        }
-        return false;
-    }
-
-    public void changeTreasureChest(Player player, List<Integer> inIndexes, List<Integer> outIndexes) {
-        this.changeTreasureChest(player.getRollResult(), player.getFortuneCard(), inIndexes, outIndexes, player.getTreasureChest());
-    }
-
-    public void changeTreasureChest(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard,
-                                    List<Integer> inIndexes, List<Integer> outIndexes, Map<Integer, Dice.DiceSide> treasureChest) {
-        if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
-            for (int index : inIndexes) {
-                Dice.DiceSide diceSide = rollResult.get(index);
-                treasureChest.put(index, diceSide);
-            }
-
-            for (int index : outIndexes) {
-                treasureChest.remove(index);
-            }
-        }
     }
 
 }

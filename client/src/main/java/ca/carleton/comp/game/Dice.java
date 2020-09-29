@@ -4,7 +4,6 @@ import ca.carleton.comp.util.RandomUtil;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Dice {
     private int index;
