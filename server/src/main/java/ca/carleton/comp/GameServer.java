@@ -20,6 +20,7 @@ public class GameServer {
     private ExecutorService handlerThreadPool = Executors.newFixedThreadPool(5);
     private CountDownLatch countDownLatch;
     private ScorePad scorePad;
+    private int turnNum = 1;
 
     public ScorePad getScorePad() {
         return scorePad;
@@ -27,6 +28,10 @@ public class GameServer {
 
     public CountDownLatch getCountDownLatch() {
         return countDownLatch;
+    }
+
+    public int getTurnNum() {
+        return turnNum;
     }
 
     public GameServer(int playerNums) {
@@ -39,7 +44,7 @@ public class GameServer {
         int playerIndex = 0;
         try {
             serverSocket = new ServerSocket(3333);
-            System.out.println("Game server started");
+            System.out.println("Game server started with " + playerNums + " player(s)");
 
             while (playerIndex < playerNums) {
                 Socket socket = serverSocket.accept();
@@ -61,6 +66,7 @@ public class GameServer {
             ScoreRecord winnerScore = scorePad.computeWinner();
 
             while (winnerScore.getFinalScore() < 6000) {
+                System.out.println("Start turn " + ++turnNum);
                 for (PlayerHandler playerHandler : playerHandlerList) {
                     playerHandler.sendScore();
                     handlerThreadPool.submit(playerHandler);
@@ -86,6 +92,10 @@ public class GameServer {
 
 
     public static void main(String[] args) {
-        new GameServer(3);
+        int playerNums = 3;
+        if (args.length > 0) {
+            playerNums = Integer.parseInt(args[0]);
+        }
+        new GameServer(playerNums);
     }
 }

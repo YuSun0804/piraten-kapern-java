@@ -6,8 +6,6 @@ import java.io.IOException;
 
 public class TestPlayer extends Player {
 
-    private boolean secondTurn;
-
     public TestPlayer(PiratenKapern piratenKapern, ClientChannel clientChannel) {
         super(piratenKapern, clientChannel);
     }
@@ -27,7 +25,7 @@ public class TestPlayer extends Player {
         System.out.println("Press f to draw a fortune card");
         scanner.next();
         fortuneCard = piratenKapern.drawFortuneCard();
-        if (name.equals("40player3") || (secondTurn && name.equals("43player2"))) {
+        if (name.equals("40player3") || (turnNums == 2 && name.equals("43player2"))) {
             fortuneCard.setType(FortuneCard.FortuneCardType.captain);
         } else {
             fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
@@ -38,7 +36,7 @@ public class TestPlayer extends Player {
         scanner.next();
         rollResult = piratenKapern.roll();
 
-        if (name.equals("40player1") && !secondTurn) {
+        if (name.equals("40player1") && turnNums == 1) {
             rollResult.put(0, Dice.DiceSide.skull);
             rollResult.put(1, Dice.DiceSide.skull);
             rollResult.put(2, Dice.DiceSide.skull);
@@ -47,7 +45,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.monkey);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("40player2") && !secondTurn) {
+        } else if (name.equals("40player2") && turnNums == 1) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.skull);
@@ -56,7 +54,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("40player3") && !secondTurn) {
+        } else if (name.equals("40player3") && turnNums == 1) {
             rollResult.put(0, Dice.DiceSide.sword);
             rollResult.put(1, Dice.DiceSide.sword);
             rollResult.put(2, Dice.DiceSide.sword);
@@ -65,7 +63,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.sword);
             rollResult.put(7, Dice.DiceSide.sword);
-        } else if (name.equals("43player1") && !secondTurn) {
+        } else if (name.equals("43player1") && turnNums == 1) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -74,7 +72,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("43player2") && !secondTurn) {
+        } else if (name.equals("43player2") && turnNums == 1) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -83,7 +81,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.parrot);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("43player3") && !secondTurn) {
+        } else if (name.equals("43player3") && turnNums == 1) {
             rollResult.put(0, Dice.DiceSide.skull);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.skull);
@@ -92,7 +90,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.monkey);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("43player1") && secondTurn) {
+        } else if (name.equals("43player1") && turnNums == 2) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -101,7 +99,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("43player2") && secondTurn) {
+        } else if (name.equals("43player2") && turnNums == 2) {
             rollResult.put(0, Dice.DiceSide.diamond);
             rollResult.put(1, Dice.DiceSide.diamond);
             rollResult.put(2, Dice.DiceSide.diamond);
@@ -110,7 +108,7 @@ public class TestPlayer extends Player {
             rollResult.put(5, Dice.DiceSide.diamond);
             rollResult.put(6, Dice.DiceSide.diamond);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (name.equals("43player3") && secondTurn) {
+        } else if (name.equals("43player3") && turnNums == 2) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -148,16 +146,5 @@ public class TestPlayer extends Player {
         }
         piratenKapern.computeScore(this);
         afterCompute();
-    }
-
-    public void playAgain() {
-        this.onIsland = false;
-        this.preSkullCount = 0;
-        this.fortuneCardUsed = false;
-        this.score = 0;
-        this.deduction = 0;
-        this.treasureChest.clear();
-        this.secondTurn = true;
-        play();
     }
 }

@@ -8,6 +8,7 @@ import java.io.IOException;
 public class PlayerHandler implements Runnable {
 
     private int playerIndex;
+    private String playerName;
     private ServerChannel serverChannel;
     private GameServer gameServer;
     private boolean greeting;
@@ -32,13 +33,14 @@ public class PlayerHandler implements Runnable {
                 gameServer.getScorePad().getByPlayerIndex(playerIndex).setPlayerName(message);
                 sendGreetingMessage(message);
                 System.out.println(message + " joined the game.");
+                playerName = message;
                 greeting = false;
             }
 
             String message = this.serverChannel.read();
             serPlayerScore(message);
             gameServer.getCountDownLatch().countDown();
-//            System.out.println(playerIndex + "countDown");
+            System.out.println(playerName + " finished the turn " + gameServer.getTurnNum());
         } catch (IOException e) {
             e.printStackTrace();
         }

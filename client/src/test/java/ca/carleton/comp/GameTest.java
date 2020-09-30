@@ -73,11 +73,11 @@ public class GameTest {
             assertEquals(0, winnerResponse2.getWinnerScore());
             assertEquals(0, winnerResponse3.getWinnerScore());
 
-            System.out.println("Player1 start next turn");
+            System.out.println("Player1 start turn 2");
             player1.setScore(scoreSetOf3());
-            System.out.println("Player2 start next turn");
+            System.out.println("Player2 start turn 2");
             player2.setScore(scoreSetOf7());
-            System.out.println("Player3 start next turn");
+            System.out.println("Player3 start turn 2");
             player3.setScore(scoreSetOf4());
             submit1 = playerThreadPool.submit(() -> player1.sendPlayerResult());
             submit2 = playerThreadPool.submit(() -> player2.sendPlayerResult());

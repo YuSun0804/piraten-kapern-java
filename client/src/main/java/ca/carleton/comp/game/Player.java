@@ -24,6 +24,16 @@ public class Player {
     protected String name;
     protected ClientChannel clientChannel;
 
+    public int getTurnNums() {
+        return turnNums;
+    }
+
+    public void setTurnNums(int turnNums) {
+        this.turnNums = turnNums;
+    }
+
+    protected int turnNums = 1;
+
     public boolean isOnIsland() {
         return onIsland;
     }
@@ -176,19 +186,21 @@ public class Player {
     }
 
     protected void afterCompute() {
-        System.out.println("Score you get in current turn before skull island deduction is " + score);
-        System.out.println("Deduction you make is " + deduction);
+        System.out.println("The score you get in turn " + turnNums + " is " + score);
+        if (deduction < 0) {
+            System.out.println("Skull of island causes deduction: " + deduction);
+        }
 
         WinnerResponse winnerResponse = sendPlayerResult();
 
         if (winnerResponse.getWinnerName() == null) {
-            System.out.println("Score you get in all turns after skull island deduction is " + winnerResponse.getPlayerScore());
-            System.out.println("No one has won the game, start next turn");
+            System.out.println("The score you get in all turns is " + winnerResponse.getPlayerScore());
+            System.out.println("No one reached 6000, start turn " + ++turnNums);
             this.playAgain();
         } else {
-            System.out.println("Score you get in all turns after skull island deduction is " + winnerResponse.getPlayerScore());
-            System.out.println("The winner is " + winnerResponse.getWinnerName() + " with score " + winnerResponse.getWinnerScore());
-            System.out.println("Press any button to exit");
+            System.out.println("The score you get in all turns is " + winnerResponse.getPlayerScore());
+            System.out.println("The winner is " + winnerResponse.getWinnerName() + " with score " + winnerResponse.getWinnerScore() + " in all turns");
+            System.out.println("The game is over, press e to exit");
             scanner.next();
         }
     }

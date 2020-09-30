@@ -11,7 +11,7 @@ public class ClientChannel {
             socket = new Socket("localhost", 3333);
             System.out.println("Connect to the game server success!");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("fail to connect server!");
         }
     }
 
