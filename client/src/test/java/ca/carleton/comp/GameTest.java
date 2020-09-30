@@ -24,7 +24,7 @@ public class GameTest {
     public void game40Test() {
         try {
             new Thread(() -> new GameServer(3)).start();
-            //make sure server started
+            //make sure server is started
             Thread.sleep(1000);
 
             Player player1 = playerScore0();
@@ -52,7 +52,7 @@ public class GameTest {
     public void game43Test() {
         try {
             new Thread(() -> new GameServer(3)).start();
-            //make sure server started
+            //make sure server is started
             Thread.sleep(1000);
 
             Player player1 = playerScore0();
