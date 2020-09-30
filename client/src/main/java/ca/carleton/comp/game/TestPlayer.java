@@ -129,7 +129,7 @@ public class TestPlayer extends Player {
         while (true) {
             System.out.println("Select an action: ");
             System.out.println("(1) Choose dice number to roll again");
-            System.out.println("(2) Score this round");
+            System.out.println("(2) Score this turn");
             int act = scanner.nextInt();
             if (act == 2) break;
 
