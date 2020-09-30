@@ -4,16 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/ScorePad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/ScoreRecord.java" afterDir="false" />
+    <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="CODE add test player for row 40,43">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/ca/carleton/comp/ScoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/ca/carleton/comp/ScoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,15 +59,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ca.carleton.comp.network" />
-      <recent name="ca.carleton.comp" />
       <recent name="ca.carleton.comp.game" />
+      <recent name="ca.carleton.comp" />
+      <recent name="ca.carleton.comp.network" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestAll">
+  <component name="RunManager" selected="JUnit.Part2Test.seaBattle129Test">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -60,53 +75,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.carleton.comp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Test.seaBattle120Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.carleton.comp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
-      <option name="METHOD_NAME" value="seaBattle120Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Test.seaBattle122Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.carleton.comp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
-      <option name="METHOD_NAME" value="seaBattle122Test" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Part2Test.seaBattle125Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -136,19 +104,68 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.TestAll" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
+      <option name="METHOD_NAME" value="seaBattle125Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part2Test.seaBattle126Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.carleton.comp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
+      <option name="METHOD_NAME" value="seaBattle126Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part2Test.seaBattle128Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.carleton.comp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
+      <option name="METHOD_NAME" value="seaBattle128Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Part2Test.seaBattle129Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.carleton.comp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
+      <option name="METHOD_NAME" value="seaBattle129Test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAll" />
-        <item itemvalue="JUnit.Part2Test" />
+        <item itemvalue="JUnit.Part2Test.seaBattle129Test" />
+        <item itemvalue="JUnit.Part2Test.seaBattle128Test" />
+        <item itemvalue="JUnit.Part2Test.seaBattle126Test" />
+        <item itemvalue="JUnit.Part2Test.seaBattle125Test" />
         <item itemvalue="JUnit.Part2Test.seaBattle123Test" />
-        <item itemvalue="JUnit.Part2Test.seaBattle122Test" />
-        <item itemvalue="JUnit.Part2Test.seaBattle120Test" />
       </list>
     </recent_temporary>
   </component>
@@ -162,47 +179,164 @@
       <updated>1601351150012</updated>
       <workItem from="1601351151411" duration="8775000" />
     </task>
+    <task id="LOCAL-00001" summary="REFACTORING compute winner">
+      <created>1601422656525</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601422656525</updated>
+    </task>
+    <task id="LOCAL-00002" summary="TEST add compute winner test">
+      <created>1601423371694</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601423371694</updated>
+    </task>
+    <task id="LOCAL-00003" summary="TEST add test of row 40 and 43">
+      <created>1601432340014</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601432340014</updated>
+    </task>
+    <task id="LOCAL-00004" summary="REFACTORING game test">
+      <created>1601432443863</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601432443863</updated>
+    </task>
+    <task id="LOCAL-00005" summary="REFACTORING game test">
+      <created>1601433123261</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1601433123261</updated>
+    </task>
+    <task id="LOCAL-00006" summary="REFACTORING network">
+      <created>1601439575209</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601439575209</updated>
+    </task>
+    <task id="LOCAL-00007" summary="REFACTORING network">
+      <created>1601439600774</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1601439600774</updated>
+    </task>
+    <task id="LOCAL-00008" summary="REFACTORING add test print">
+      <created>1601445213020</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1601445213020</updated>
+    </task>
+    <task id="LOCAL-00009" summary="REFACTORING update test print">
+      <created>1601445311575</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1601445311575</updated>
+    </task>
+    <task id="LOCAL-00010" summary="CODE update pom">
+      <created>1601445604855</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1601445604855</updated>
+    </task>
+    <task id="LOCAL-00011" summary="CODE add test player for row 40,43">
+      <created>1601475032813</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601475032813</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="REFACTORING compute winner" />
+    <MESSAGE value="TEST add compute winner test" />
+    <MESSAGE value="TEST add test of row 40 and 43" />
+    <MESSAGE value="REFACTORING game test" />
+    <MESSAGE value="REFACTORING network" />
+    <MESSAGE value="REFACTORING add test print" />
+    <MESSAGE value="REFACTORING update test print" />
+    <MESSAGE value="CODE update pom" />
+    <MESSAGE value="CODE add test player for row 40,43" />
+    <option name="LAST_COMMIT_MESSAGE" value="CODE add test player for row 40,43" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom" timestamp="1601400978956">
+    <state x="2051" y="238" width="374" height="588" key="#com.intellij.ide.util.MemberChooser" timestamp="1601424770762">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978956" />
-    <state width="1874" height="279" key="GridCell.Tab.0.center" timestamp="1601400978955">
+    <state x="2051" y="238" width="374" height="588" key="#com.intellij.ide.util.MemberChooser/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601424770762" />
+    <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2" timestamp="1601475032714">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978955" />
-    <state width="1874" height="279" key="GridCell.Tab.0.left" timestamp="1601400978955">
+    <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601475032714" />
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom" timestamp="1601476898225">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978955" />
-    <state width="1874" height="279" key="GridCell.Tab.0.right" timestamp="1601400978955">
+    <state width="1874" height="271" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898225" />
+    <state width="1874" height="271" key="GridCell.Tab.0.center" timestamp="1601476898224">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="279" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601400978955" />
-    <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601396843598">
+    <state width="1874" height="271" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898224" />
+    <state width="1874" height="271" key="GridCell.Tab.0.left" timestamp="1601476898224">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396843598" />
-    <state width="1874" height="344" key="GridCell.Tab.1.center" timestamp="1601396843597">
+    <state width="1874" height="271" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898224" />
+    <state width="1874" height="271" key="GridCell.Tab.0.right" timestamp="1601476898225">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396843597" />
-    <state width="1874" height="344" key="GridCell.Tab.1.left" timestamp="1601396843597">
+    <state width="1874" height="271" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898225" />
+    <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601431305601">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396843597" />
-    <state width="1874" height="344" key="GridCell.Tab.1.right" timestamp="1601396843598">
+    <state width="1874" height="344" key="GridCell.Tab.1.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601431305601" />
+    <state width="1874" height="344" key="GridCell.Tab.1.center" timestamp="1601431305601">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="344" key="GridCell.Tab.1.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601396843598" />
+    <state width="1874" height="344" key="GridCell.Tab.1.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601431305601" />
+    <state width="1874" height="344" key="GridCell.Tab.1.left" timestamp="1601431305601">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="344" key="GridCell.Tab.1.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601431305601" />
+    <state width="1874" height="344" key="GridCell.Tab.1.right" timestamp="1601431305601">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="344" key="GridCell.Tab.1.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601431305601" />
+    <state x="1804" y="288" width="868" height="529" key="IDE.errors.dialog" timestamp="1601404427495">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1804" y="288" width="868" height="529" key="IDE.errors.dialog/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601404427495" />
+    <state x="1838" y="252" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1601475046515">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1838" y="252" width="800" height="531" key="Vcs.Push.Dialog.v2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601475046515" />
     <state x="1976" y="312" width="524" height="481" key="extract.method.dialog" timestamp="1601393700503">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
     <state x="1976" y="312" width="524" height="481" key="extract.method.dialog/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601393700503" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/test/java/ca/carleton/comp/ScoreTest.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

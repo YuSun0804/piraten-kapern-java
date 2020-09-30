@@ -1,0 +1,5 @@
+ca/carleton/comp/GameServer.class
+ca/carleton/comp/game/ScorePad.class
+ca/carleton/comp/game/PlayerHandler.class
+ca/carleton/comp/game/ScoreRecord.class
+ca/carleton/comp/network/ServerChannel.class

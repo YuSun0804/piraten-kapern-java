@@ -5,6 +5,7 @@ import ca.carleton.comp.game.FortuneCard;
 import ca.carleton.comp.game.PiratenKapern;
 import ca.carleton.comp.game.Player;
 import ca.carleton.comp.network.ClientChannel;
+import ca.carleton.comp.network.WinnerResponse;
 import org.junit.Test;
 
 import java.util.Map;
@@ -55,9 +56,9 @@ public class GameTest {
             //make sure server is started
             Thread.sleep(1000);
 
-            Player player1 = playerSetOf5();
-            Player player2 = playerSetOf6();
-            Player player3 = playerSetOf4();
+            Player player1 = playerSetOf4();
+            Player player2 = playerSetOf5();
+            Player player3 = playerSetOf6();
             Future<WinnerResponse> submit1 = playerThreadPool.submit(() -> player1.sendPlayerResult());
             Future<WinnerResponse> submit2 = playerThreadPool.submit(() -> player2.sendPlayerResult());
             Future<WinnerResponse> submit3 = playerThreadPool.submit(() -> player3.sendPlayerResult());
@@ -95,7 +96,7 @@ public class GameTest {
 
     }
 
-    private Player playerScore0() {
+    public Player playerScore0() {
         ClientChannel clientChannel = new ClientChannel();
         Player player = new Player(piratenKapern, clientChannel);
         player.initPlayer("player1");
@@ -121,7 +122,7 @@ public class GameTest {
         return player;
     }
 
-    private Player player8SwordWithCaptain() {
+    public Player player8SwordWithCaptain() {
         ClientChannel clientChannel = new ClientChannel();
         Player player = new Player(piratenKapern, clientChannel);
         player.initPlayer("player3");
@@ -147,7 +148,7 @@ public class GameTest {
         return player;
     }
 
-    private Player playerSetOf3() {
+    public Player playerSetOf3() {
         ClientChannel clientChannel = new ClientChannel();
         Player player = new Player(piratenKapern, clientChannel);
         player.initPlayer("player2");
@@ -173,7 +174,7 @@ public class GameTest {
         return player;
     }
 
-    private Player playerSetOf5() {
+    public Player playerSetOf4() {
         ClientChannel clientChannel = new ClientChannel();
         Player player = new Player(piratenKapern, clientChannel);
         player.initPlayer("player1");
@@ -185,12 +186,12 @@ public class GameTest {
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
-        rollResult.put(0, Dice.DiceSide.skull);
+        rollResult.put(0, Dice.DiceSide.parrot);
         rollResult.put(1, Dice.DiceSide.parrot);
-        rollResult.put(2, Dice.DiceSide.skull);
-        rollResult.put(3, Dice.DiceSide.monkey);
-        rollResult.put(4, Dice.DiceSide.monkey);
-        rollResult.put(5, Dice.DiceSide.monkey);
+        rollResult.put(2, Dice.DiceSide.parrot);
+        rollResult.put(3, Dice.DiceSide.skull);
+        rollResult.put(4, Dice.DiceSide.parrot);
+        rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.monkey);
 
@@ -199,7 +200,8 @@ public class GameTest {
         return player;
     }
 
-    private Player playerSetOf6() {
+
+    public Player playerSetOf5() {
         ClientChannel clientChannel = new ClientChannel();
         Player player = new Player(piratenKapern, clientChannel);
         player.initPlayer("player2");
@@ -225,10 +227,10 @@ public class GameTest {
         return player;
     }
 
-    private Player playerSetOf4() {
+    public Player playerSetOf6() {
         ClientChannel clientChannel = new ClientChannel();
         Player player = new Player(piratenKapern, clientChannel);
-        player.initPlayer("player3");
+        player.initPlayer("player1");
 
         // draw fortune card
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
@@ -237,12 +239,12 @@ public class GameTest {
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
-        rollResult.put(0, Dice.DiceSide.parrot);
+        rollResult.put(0, Dice.DiceSide.skull);
         rollResult.put(1, Dice.DiceSide.parrot);
-        rollResult.put(2, Dice.DiceSide.parrot);
-        rollResult.put(3, Dice.DiceSide.skull);
-        rollResult.put(4, Dice.DiceSide.parrot);
-        rollResult.put(5, Dice.DiceSide.sword);
+        rollResult.put(2, Dice.DiceSide.skull);
+        rollResult.put(3, Dice.DiceSide.monkey);
+        rollResult.put(4, Dice.DiceSide.monkey);
+        rollResult.put(5, Dice.DiceSide.monkey);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.monkey);
 
@@ -251,9 +253,7 @@ public class GameTest {
         return player;
     }
 
-
-
-    private int scoreSetOf3() {
+    public int scoreSetOf3() {
         // draw fortune card
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
@@ -274,7 +274,7 @@ public class GameTest {
         return score;
     }
 
-    private int scoreSetOf4() {
+    public int scoreSetOf4() {
         // draw fortune card
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
@@ -295,7 +295,7 @@ public class GameTest {
         return score;
     }
 
-    private int scoreSetOf7() {
+    public int scoreSetOf7() {
         // draw fortune card
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one

@@ -191,11 +191,20 @@ public class Part2Test {
         rollResult.put(4, Dice.DiceSide.coin);
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.sword);
-        rollResult.put(7, Dice.DiceSide.diamond);
+        rollResult.put(7, Dice.DiceSide.sword);
         System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        System.out.println("Re-roll 6, 7.");
+        piratenKapern.reRoll(indexes, rollResult);
+        // change the random dice to fixed one
+        rollResult.put(6, Dice.DiceSide.sword);
+        rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
+
+        //re-roll
+        indexes = new ArrayList<>(Arrays.asList(6, 7));
         System.out.println("Re-roll 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
@@ -231,6 +240,15 @@ public class Part2Test {
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        System.out.println("Re-roll 6, 7.");
+        piratenKapern.reRoll(indexes, rollResult);
+        // change the random dice to fixed one
+        rollResult.put(6, Dice.DiceSide.coin);
+        rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The re-roll result is " + rollResult);
+
+        //re-roll
+        indexes = new ArrayList<>(Arrays.asList(6, 7));
         System.out.println("Re-roll 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
@@ -869,18 +887,21 @@ public class Part2Test {
         System.out.println("The roll result is " + rollResult);
 
         //re-roll
-        List<Integer> indexes = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        System.out.println("Re-roll 1, 2, 3, 4.");
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(0, 1, 2, 3));
+        System.out.println("Re-roll 0, 1, 2, 3.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
+        rollResult.put(0, Dice.DiceSide.skull);
         rollResult.put(1, Dice.DiceSide.skull);
-        rollResult.put(2, Dice.DiceSide.skull);
+        rollResult.put(2, Dice.DiceSide.sword);
         rollResult.put(3, Dice.DiceSide.sword);
-        rollResult.put(4, Dice.DiceSide.sword);
         System.out.println("The re-roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -905,6 +926,7 @@ public class Part2Test {
         System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1300, score);
     }
 
