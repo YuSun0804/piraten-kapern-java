@@ -1,13 +1,17 @@
 package ca.carleton.comp.game;
 
+import ca.carleton.comp.network.ClientChannel;
+import ca.carleton.comp.network.WinnerResponse;
 import ca.carleton.comp.util.RandomUtil;
 
+import java.io.IOException;
 import java.util.*;
 
 public class PiratenKapern {
 
     private List<Dice> diceList;
     private List<FortuneCard> fortuneCardList;
+
 
     public PiratenKapern() {
         diceList = new ArrayList<>(8);
@@ -18,6 +22,7 @@ public class PiratenKapern {
             diceList.add(dice);
         }
     }
+
 
     public FortuneCard drawFortuneCard() {
         while (true) {
@@ -140,6 +145,7 @@ public class PiratenKapern {
         }
 
         if (skullCount >= 3) {
+            System.out.println(Constant.DIE_WITH_SKULL);
             if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
                 rollResult = treasureChest;
             } else {
@@ -342,6 +348,5 @@ public class PiratenKapern {
             }
         }
     }
-
 
 }

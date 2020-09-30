@@ -20,6 +20,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.sorceress);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -31,17 +33,23 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.parrot);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
+
         // re-roll for sorceress
         boolean result = piratenKapern.reRollForSorceress(rollResult);
+        System.out.println("Re-roll 0 due to sorceress.");
         assertEquals(true, result);
+        System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
         assertEquals(1, countSkull);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        System.out.println("Re-roll 5, 6, 7.");
         boolean reRoll = piratenKapern.reRoll(indexes, rollResult);
         assertEquals(true, reRoll);
+        System.out.println("The re-roll result is " + rollResult);
 
     }
 
@@ -51,6 +59,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.sorceress);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -62,22 +72,30 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.parrot);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
+
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        System.out.println("Re-roll 5, 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(5, Dice.DiceSide.skull);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         // re-roll for sorceress
         boolean result = piratenKapern.reRollForSorceress(rollResult);
+        System.out.println("Re-roll 5 due to sorceress.");
         assertEquals(true, result);
+        System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
         assertEquals(0, countSkull);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertTrue(score > 0);
+        System.out.println("The score is " + score);
+
     }
 
     @Test
@@ -86,6 +104,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.sorceress);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -97,25 +117,34 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.parrot);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
+
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        System.out.println("Re-roll 5, 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(5, Dice.DiceSide.skull);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         // re-roll for sorceress
         boolean result = piratenKapern.reRollForSorceress(rollResult);
+        System.out.println("Re-roll 5 due to sorceress.");
         assertEquals(true, result);
+        System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
         assertEquals(0, countSkull);
 
         //re-roll
         indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        System.out.println("Re-roll 5, 6, 7.");
         boolean reRoll = piratenKapern.reRoll(indexes, rollResult);
         assertEquals(true, reRoll);
+        System.out.println("The re-roll result is " + rollResult);
+
     }
 
     @Test
@@ -124,6 +153,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.monkey_business);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -135,8 +166,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.parrot);
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1100, score);
     }
 
@@ -146,6 +179,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.monkey_business);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -157,15 +192,19 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.diamond);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        System.out.println("Re-roll 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(6, Dice.DiceSide.diamond);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(400, score);
     }
 
@@ -175,6 +214,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.monkey_business);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -186,15 +227,19 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.parrot);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        System.out.println("Re-roll 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(6, Dice.DiceSide.parrot);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(2000, score);
     }
 
@@ -204,6 +249,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.treasure_chest);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -215,30 +262,39 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.diamond);
         rollResult.put(6, Dice.DiceSide.diamond);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
-        Map<Integer, Dice.DiceSide> reservedDiceMap = new HashMap<>();
+        Map<Integer, Dice.DiceSide> treasureChest = new HashMap<>();
         List<Integer> inList = new ArrayList<>(Arrays.asList(5, 6, 7));
-        piratenKapern.changeTreasureChest(rollResult, fortuneCard, inList, new ArrayList<>(), reservedDiceMap);
+        System.out.println("put 5, 6, 7 in chest.");
+        piratenKapern.changeTreasureChest(rollResult, fortuneCard, inList, new ArrayList<>(), treasureChest);
+        System.out.println("The chest result is " + treasureChest);
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(3, 4));
+        System.out.println("Re-roll 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(3, Dice.DiceSide.parrot);
         rollResult.put(4, Dice.DiceSide.parrot);
+        System.out.println("The re-roll result is " + rollResult);
 
         inList = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4));
         List<Integer> outList = new ArrayList<>(Arrays.asList(5, 6, 7));
-        piratenKapern.changeTreasureChest(rollResult, fortuneCard, inList, outList, reservedDiceMap);
-
+        System.out.println("put 0, 1, 2, 3, 4 in chest, take 5, 6, 7 out.");
+        piratenKapern.changeTreasureChest(rollResult, fortuneCard, inList, outList, treasureChest);
+        System.out.println("The chest result is " + treasureChest);
         //re-roll
         indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        System.out.println("Re-roll 5, 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(5, Dice.DiceSide.skull);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The re-roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1100, score);
     }
 
@@ -248,6 +304,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.treasure_chest);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -259,31 +317,42 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.coin);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         Map<Integer, Dice.DiceSide> treasureChest = new HashMap<>();
         List<Integer> inList = new ArrayList<>(Arrays.asList(5, 6, 7));
+        System.out.println("put 5, 6, 7 in chest.");
         piratenKapern.changeTreasureChest(rollResult, fortuneCard, inList, new ArrayList<>(), treasureChest);
+        System.out.println("The chest result is " + treasureChest);
+
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(2, 3, 4));
+        System.out.println("Re-roll 2, 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(2, Dice.DiceSide.coin);
         rollResult.put(3, Dice.DiceSide.diamond);
         rollResult.put(4, Dice.DiceSide.diamond);
+        System.out.println("The re-roll result is " + rollResult);
 
+        System.out.println("put 2 in chest.");
         inList = new ArrayList<>(Arrays.asList(2));
         piratenKapern.changeTreasureChest(rollResult, fortuneCard, inList, new ArrayList<>(), treasureChest);
+        System.out.println("The chest result is " + treasureChest);
 
         //re-roll
         indexes = new ArrayList<>(Arrays.asList(3, 4));
+        System.out.println("Re-roll 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(3, Dice.DiceSide.skull);
         rollResult.put(4, Dice.DiceSide.coin);
+        System.out.println("The re-roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, treasureChest);
+        System.out.println("The score is " + score);
         assertEquals(600, score);
     }
 
@@ -293,6 +362,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -304,8 +375,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.diamond);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(400, score);
     }
 
@@ -315,6 +388,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.captain);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -326,8 +401,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1800, score);
     }
 
@@ -337,6 +414,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -348,8 +427,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.diamond);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1000, score);
     }
 
@@ -359,6 +440,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -370,15 +453,19 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.parrot);
         rollResult.put(6, Dice.DiceSide.parrot);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(5, Dice.DiceSide.coin);
         rollResult.put(6, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1200, score);
     }
 
@@ -388,6 +475,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.monkey_business);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -399,8 +488,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.diamond);
         rollResult.put(6, Dice.DiceSide.diamond);
         rollResult.put(7, Dice.DiceSide.diamond);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1200, score);
     }
 
@@ -410,6 +501,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_skull);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -421,11 +514,13 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(0, score);
     }
 
@@ -435,6 +530,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.one_skull);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -446,11 +543,13 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(0, score);
     }
 
@@ -460,6 +559,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_skull);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -471,21 +572,28 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(3, 4));
+        System.out.println("Re-roll 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(3, Dice.DiceSide.skull);
         rollResult.put(4, Dice.DiceSide.skull);
+        System.out.println("The re-roll result is " + rollResult);
 
         //re-roll
-        indexes = new ArrayList<>(Arrays.asList(5));
+        indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
-        rollResult.put(5, Dice.DiceSide.skull);
+        rollResult.put(5, Dice.DiceSide.coin);
+        rollResult.put(6, Dice.DiceSide.skull);
+        System.out.println("The re-roll result is " + rollResult);
 
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
+        System.out.println("The deduction is " + deduction);
         assertEquals(-700, deduction);
     }
 
@@ -495,6 +603,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_skull);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -506,16 +616,19 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(3, 4));
+        System.out.println("Re-roll 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(3, Dice.DiceSide.monkey);
         rollResult.put(4, Dice.DiceSide.monkey);
-
+        System.out.println("The re-roll result is " + rollResult);
 
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
+        System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
     }
 
@@ -525,6 +638,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.one_skull);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -536,22 +651,28 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(3, 4));
+        System.out.println("Re-roll 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(3, Dice.DiceSide.skull);
         rollResult.put(4, Dice.DiceSide.monkey);
+        System.out.println("The re-roll result is " + rollResult);
 
         //re-roll
         indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(5, Dice.DiceSide.monkey);
         rollResult.put(6, Dice.DiceSide.monkey);
+        System.out.println("The re-roll result is " + rollResult);
 
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
+        System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
     }
 
@@ -561,6 +682,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -572,10 +695,12 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
+        System.out.println("The deduction is " + deduction);
         assertEquals(-300, deduction);
     }
 
@@ -585,6 +710,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.three_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -596,10 +723,12 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.coin);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
+        System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
     }
 
@@ -609,6 +738,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.four_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -620,10 +751,12 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.coin);
         rollResult.put(6, Dice.DiceSide.coin);
         rollResult.put(7, Dice.DiceSide.coin);
+        System.out.println("The roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
+        System.out.println("The deduction is " + deduction);
         assertEquals(-1000, deduction);
     }
 
@@ -633,6 +766,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -644,8 +779,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.coin);
         rollResult.put(6, Dice.DiceSide.parrot);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(500, score);
     }
 
@@ -655,6 +792,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.two_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -666,15 +805,19 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.skull);
         rollResult.put(6, Dice.DiceSide.parrot);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        System.out.println("Re-roll 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(500, score);
     }
 
@@ -684,6 +827,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.three_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -695,8 +840,10 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(800, score);
     }
 
@@ -706,6 +853,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.three_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -717,15 +866,18 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.skull);
         rollResult.put(7, Dice.DiceSide.skull);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        System.out.println("Re-roll 1, 2, 3, 4.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(1, Dice.DiceSide.skull);
         rollResult.put(2, Dice.DiceSide.skull);
         rollResult.put(3, Dice.DiceSide.sword);
         rollResult.put(4, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         boolean canContinue = piratenKapern.canContinue(rollResult, fortuneCard);
         assertEquals(false, canContinue);
@@ -737,6 +889,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.four_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -748,6 +902,7 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.sword);
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.skull);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertEquals(1300, score);
@@ -759,6 +914,8 @@ public class Part2Test {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.four_sabre);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -770,23 +927,29 @@ public class Part2Test {
         rollResult.put(5, Dice.DiceSide.diamond);
         rollResult.put(6, Dice.DiceSide.parrot);
         rollResult.put(7, Dice.DiceSide.parrot);
+        System.out.println("The roll result is " + rollResult);
 
         //re-roll
         List<Integer> indexes = new ArrayList<>(Arrays.asList(6, 7));
+        System.out.println("Re-roll 6, 7.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(6, Dice.DiceSide.sword);
         rollResult.put(7, Dice.DiceSide.sword);
+        System.out.println("The re-roll result is " + rollResult);
 
         //re-roll
         indexes = new ArrayList<>(Arrays.asList(0, 1, 2));
+        System.out.println("Re-roll 0, 1, 2.");
         piratenKapern.reRoll(indexes, rollResult);
         // change the random dice to fixed one
         rollResult.put(0, Dice.DiceSide.sword);
         rollResult.put(1, Dice.DiceSide.parrot);
         rollResult.put(2, Dice.DiceSide.parrot);
+        System.out.println("The re-roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
         assertEquals(1300, score);
     }
 }
