@@ -1,27 +1,28 @@
 package ca.carleton.comp.game;
 
 import ca.carleton.comp.network.ClientChannel;
+import ca.carleton.comp.network.WinnerResponse;
 
 import java.io.IOException;
 import java.util.*;
 
 public class Player {
-    private PiratenKapern piratenKapern;
-    private Scanner scanner;
+    protected PiratenKapern piratenKapern;
+    protected Scanner scanner;
 
-    private boolean onIsland;
-    private int preSkullCount;
+    protected boolean onIsland;
+    protected int preSkullCount;
 
-    private FortuneCard fortuneCard;
-    private boolean fortuneCardUsed;
+    protected FortuneCard fortuneCard;
+    protected boolean fortuneCardUsed;
 
-    private int score;
-    private int deduction;
+    protected int score;
+    protected int deduction;
 
-    private Map<Integer, Dice.DiceSide> treasureChest;
+    protected Map<Integer, Dice.DiceSide> treasureChest;
 
-    private ClientChannel clientChannel;
-    private String name;
+    protected String name;
+    protected ClientChannel clientChannel;
 
     public boolean isOnIsland() {
         return onIsland;
@@ -87,24 +88,47 @@ public class Player {
         this.rollResult = rollResult;
     }
 
-    private Map<Integer, Dice.DiceSide> rollResult;
+    protected Map<Integer, Dice.DiceSide> rollResult;
 
     public Player(PiratenKapern piratenKapern, ClientChannel clientChannel) {
         this.piratenKapern = piratenKapern;
         this.scanner = new Scanner(System.in);
         this.treasureChest = new HashMap<>();
         this.clientChannel = clientChannel;
-        initPlayer();
-
     }
 
-    private void initPlayer() {
+    public String sendPlayerName(String name) throws IOException {
+        clientChannel.write(name);
+        return clientChannel.read();
+    }
+
+    public WinnerResponse sendPlayerResult() {
+        try {
+            clientChannel.write(score + "," + deduction);
+            String result = clientChannel.read();
+            String[] split = result.split(",");
+
+            if (split.length == 1) {
+                return new WinnerResponse(null, 0, Integer.parseInt(split[0]));
+            } else {
+                return new WinnerResponse(split[1], Integer.parseInt(split[2]), Integer.parseInt(split[0]));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public void initPlayer() {
         System.out.print("What is your name ? ");
         Scanner scanner = new Scanner(System.in);
-        name = scanner.next();
+        initPlayer(scanner.next());
+    }
+
+    public void initPlayer(String name) {
+        this.name = name;
         try {
-            clientChannel.write(name);
-            String response = clientChannel.readString();
+            String response = sendPlayerName(name);
             System.out.println(response);
 
         } catch (IOException e) {
@@ -125,9 +149,7 @@ public class Player {
 
         piratenKapern.checkOnIsland(this);
         if (!doAfterRoll()) {
-            System.out.println(Constant.DIE_WITH_SKULL);
-            System.out.println("Score you get is " + score);
-            System.out.println("Deduction you make is " + deduction);
+            afterCompute();
             return;
         }
 
@@ -141,29 +163,47 @@ public class Player {
             System.out.println("Select the dice to re-roll, split with , ");
             String next = scanner.next();
             String[] indexes = next.split(",");
-            reRoll(indexes);
-            System.out.println("The re-roll result is  " + rollResult);
+            if (reRoll(indexes)) {
+                System.out.println("The re-roll result is  " + rollResult);
+            }
 
             if (!doAfterRoll()) {
-                System.out.println(Constant.DIE_WITH_SKULL);
                 return;
             }
         }
-
         piratenKapern.computeScore(this);
-        System.out.println("Score you get is " + score);
+        afterCompute();
+    }
+
+    protected void afterCompute() {
+        System.out.println("Score you get in current turn before skull island deduction is " + score);
         System.out.println("Deduction you make is " + deduction);
 
-        try {
-            clientChannel.write(score + "," + deduction);
-            String result = clientChannel.readString();
-            System.out.println(result);
-        } catch (IOException e) {
-            e.printStackTrace();
+        WinnerResponse winnerResponse = sendPlayerResult();
+
+        if (winnerResponse.getWinnerName() == null) {
+            System.out.println("Score you get in all turns after skull island deduction is " + winnerResponse.getPlayerScore());
+            System.out.println("No one has won the game, start next turn");
+            this.playAgain();
+        } else {
+            System.out.println("Score you get in all turns after skull island deduction is " + winnerResponse.getPlayerScore());
+            System.out.println("The winner is " + winnerResponse.getWinnerName() + " with score " + winnerResponse.getWinnerScore());
+            System.out.println("Press any button to exit");
+            scanner.next();
         }
     }
 
-    private boolean doAfterRoll() {
+    public void playAgain() {
+        this.onIsland = false;
+        this.preSkullCount = 0;
+        this.fortuneCardUsed = false;
+        this.score = 0;
+        this.deduction = 0;
+        this.treasureChest.clear();
+        play();
+    }
+
+    protected boolean doAfterRoll() {
         if (!piratenKapern.canContinue(this)) {
             if (piratenKapern.canReRollSkull(this)) {
                 System.out.println("One of the skull dice will re-roll, since you have a sorceress card");
@@ -171,8 +211,6 @@ public class Player {
                 System.out.println("The result after sorceress card used is  " + rollResult);
             } else {
                 piratenKapern.computeScore(this);
-                System.out.println("Score you get is " + score);
-                System.out.println("Deduction you make is " + deduction);
                 return false;
             }
         }
@@ -203,12 +241,12 @@ public class Player {
 
     }
 
-    private void reRoll(String[] indexes) {
+    protected boolean reRoll(String[] indexes) {
         List<Integer> indexList = new ArrayList<>();
         for (String index : indexes) {
             indexList.add(Integer.parseInt(index));
         }
-        piratenKapern.reRoll(this, indexList);
+        return piratenKapern.reRoll(this, indexList);
 
     }
 
