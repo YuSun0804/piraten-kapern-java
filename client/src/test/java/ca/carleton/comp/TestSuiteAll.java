@@ -7,7 +7,8 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         Part1Test.class,
         Part2Test.class,
+        GameTest.class
 })
-public class TestAll {
+public class TestSuiteAll {
 
 }
