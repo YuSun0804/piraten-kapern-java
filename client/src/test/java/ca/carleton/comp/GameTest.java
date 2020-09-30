@@ -55,7 +55,7 @@ public class GameTest {
             //make sure server is started
             Thread.sleep(1000);
 
-            Player player1 = playerScore0();
+            Player player1 = playerSetOf5();
             Player player2 = playerSetOf6();
             Player player3 = playerSetOf4();
             Future<WinnerResponse> submit1 = playerThreadPool.submit(() -> player1.sendPlayerResult());
@@ -165,6 +165,32 @@ public class GameTest {
         rollResult.put(3, Dice.DiceSide.skull);
         rollResult.put(4, Dice.DiceSide.parrot);
         rollResult.put(5, Dice.DiceSide.sword);
+        rollResult.put(6, Dice.DiceSide.monkey);
+        rollResult.put(7, Dice.DiceSide.monkey);
+
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        player.setScore(score);
+        return player;
+    }
+
+    private Player playerSetOf5() {
+        ClientChannel clientChannel = new ClientChannel();
+        Player player = new Player(piratenKapern, clientChannel);
+        player.initPlayer("player1");
+
+        // draw fortune card
+        FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
+        // change the random card to fixed one
+        fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        // first roll
+        Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
+        //first roll result
+        rollResult.put(0, Dice.DiceSide.skull);
+        rollResult.put(1, Dice.DiceSide.parrot);
+        rollResult.put(2, Dice.DiceSide.skull);
+        rollResult.put(3, Dice.DiceSide.monkey);
+        rollResult.put(4, Dice.DiceSide.monkey);
+        rollResult.put(5, Dice.DiceSide.monkey);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.monkey);
 
