@@ -6,17 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="CODE add test player for row 40,43">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +64,7 @@
       <recent name="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Part2Test.seaBattle129Test">
+  <component name="RunManager" selected="JUnit.GameTest.game40Test">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -79,7 +76,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.seaBattle123Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -88,14 +85,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
-      <option name="METHOD_NAME" value="seaBattle123Test" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.GameTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.game40Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ca.carleton.comp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.GameTest" />
+      <option name="METHOD_NAME" value="game40Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Part2Test.seaBattle125Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GameTest.game43Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -104,24 +116,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
-      <option name="METHOD_NAME" value="seaBattle125Test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Part2Test.seaBattle126Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ca.carleton.comp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.Part2Test" />
-      <option name="METHOD_NAME" value="seaBattle126Test" />
+      <option name="MAIN_CLASS_NAME" value="ca.carleton.comp.GameTest" />
+      <option name="METHOD_NAME" value="game43Test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GameTest.game40Test" />
+        <item itemvalue="JUnit.GameTest.game43Test" />
+        <item itemvalue="JUnit.GameTest" />
         <item itemvalue="JUnit.Part2Test.seaBattle129Test" />
         <item itemvalue="JUnit.Part2Test.seaBattle128Test" />
-        <item itemvalue="JUnit.Part2Test.seaBattle126Test" />
-        <item itemvalue="JUnit.Part2Test.seaBattle125Test" />
-        <item itemvalue="JUnit.Part2Test.seaBattle123Test" />
       </list>
     </recent_temporary>
   </component>
@@ -283,22 +279,22 @@
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
     <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601475032714" />
-    <state width="1874" height="271" key="GridCell.Tab.0.bottom" timestamp="1601476898225">
+    <state width="1874" height="398" key="GridCell.Tab.0.bottom" timestamp="1601478982643">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898225" />
-    <state width="1874" height="271" key="GridCell.Tab.0.center" timestamp="1601476898224">
+    <state width="1874" height="398" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601478982643" />
+    <state width="1874" height="398" key="GridCell.Tab.0.center" timestamp="1601478982643">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898224" />
-    <state width="1874" height="271" key="GridCell.Tab.0.left" timestamp="1601476898224">
+    <state width="1874" height="398" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601478982643" />
+    <state width="1874" height="398" key="GridCell.Tab.0.left" timestamp="1601478982643">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898224" />
-    <state width="1874" height="271" key="GridCell.Tab.0.right" timestamp="1601476898225">
+    <state width="1874" height="398" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601478982643" />
+    <state width="1874" height="398" key="GridCell.Tab.0.right" timestamp="1601478982643">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="271" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601476898225" />
+    <state width="1874" height="398" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601478982643" />
     <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601431305601">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
@@ -327,6 +323,10 @@
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
     <state x="1976" y="312" width="524" height="481" key="extract.method.dialog/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601393700503" />
+    <state x="1929" y="289" width="621" height="522" key="find.popup" timestamp="1601479134576">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1929" y="289" width="621" height="522" key="find.popup/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601479134576" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

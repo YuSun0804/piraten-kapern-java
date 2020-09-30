@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ca.carleton.comp.Part1Test" time="0.006" tests="26" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ca.carleton.comp.Part1Test" time="0.017" tests="26" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="13"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CA"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-13-oracle/lib"/>
-    <property name="sun.java.command" value="/home/kevin/repo/java/COMP5104/client/target/surefire/surefirebooter6403320679375103972.jar /home/kevin/repo/java/COMP5104/client/target/surefire 2020-09-29T23-50-35_192-jvmRun1 surefire9376577113368748729tmp surefire_15163286131180912335tmp"/>
+    <property name="sun.java.command" value="/home/kevin/repo/java/COMP5104/client/target/surefire/surefirebooter2711917276713884889.jar /home/kevin/repo/java/COMP5104/client/target/surefire 2020-09-30T11-06-02_494-jvmRun1 surefire17549288102323607087tmp surefire_15267360635309831435tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/home/kevin/repo/java/COMP5104/client/target/test-classes:/home/kevin/repo/java/COMP5104/client/target/classes:/home/kevin/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/kevin/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/home/kevin/repo/java/COMP5104/server/target/server-1.0-SNAPSHOT.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -27,7 +27,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="/home/kevin/repo/java/COMP5104/client/target/surefire/surefirebooter6403320679375103972.jar"/>
+    <property name="surefire.real.class.path" value="/home/kevin/repo/java/COMP5104/client/target/surefire/surefirebooter2711917276713884889.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="13.0.2+8"/>
     <property name="user.name" value="kevin"/>
@@ -50,30 +50,30 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="57.0"/>
   </properties>
-  <testcase name="score48Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score49Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score48Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
+  <testcase name="score49Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score50Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score51Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score51Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score53Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score54Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score54Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score55Test" classname="ca.carleton.comp.Part1Test" time="0"/>
   <testcase name="score56Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score57Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score57Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score58Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score59Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score60Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score61Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score62Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score59Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
+  <testcase name="score60Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
+  <testcase name="score61Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
+  <testcase name="score62Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score63Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score64Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score64Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score65Test" classname="ca.carleton.comp.Part1Test" time="0"/>
   <testcase name="score66Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score67Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score67Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score68Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score69Test" classname="ca.carleton.comp.Part1Test" time="0"/>
+  <testcase name="score69Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score70Test" classname="ca.carleton.comp.Part1Test" time="0"/>
   <testcase name="score71Test" classname="ca.carleton.comp.Part1Test" time="0"/>
-  <testcase name="score72Test" classname="ca.carleton.comp.Part1Test" time="0.002"/>
+  <testcase name="score72Test" classname="ca.carleton.comp.Part1Test" time="0.001"/>
   <testcase name="score73Test" classname="ca.carleton.comp.Part1Test" time="0"/>
   <testcase name="score75Test" classname="ca.carleton.comp.Part1Test" time="0"/>
 </testsuite>

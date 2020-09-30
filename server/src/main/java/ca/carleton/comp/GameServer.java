@@ -70,7 +70,7 @@ public class GameServer {
                 winnerScore = scorePad.computeWinner();
             }
 
-            System.out.println("The winner is " + winnerScore.getPlayerName() + " , with score " + winnerScore.getFinalScore());
+            System.out.println("The winner is " + winnerScore.getPlayerName() + " , with score " + winnerScore.getFinalScore() + " in all turns");
             for (PlayerHandler playerHandler : playerHandlerList) {
                 playerHandler.sendWinner(winnerScore);
             }

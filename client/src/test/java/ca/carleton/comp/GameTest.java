@@ -73,8 +73,11 @@ public class GameTest {
             assertEquals(0, winnerResponse2.getWinnerScore());
             assertEquals(0, winnerResponse3.getWinnerScore());
 
+            System.out.println("Player1 start next turn");
             player1.setScore(scoreSetOf3());
+            System.out.println("Player2 start next turn");
             player2.setScore(scoreSetOf7());
+            System.out.println("Player3 start next turn");
             player3.setScore(scoreSetOf4());
             submit1 = playerThreadPool.submit(() -> player1.sendPlayerResult());
             submit2 = playerThreadPool.submit(() -> player2.sendPlayerResult());
@@ -105,6 +108,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -116,8 +121,10 @@ public class GameTest {
         rollResult.put(5, Dice.DiceSide.monkey);
         rollResult.put(6, Dice.DiceSide.monkey);
         rollResult.put(7, Dice.DiceSide.monkey);
+        System.out.println("The roll result is " + rollResult);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         player.setScore(score);
         return player;
     }
@@ -131,6 +138,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.captain);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -144,6 +153,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.sword);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         player.setScore(score);
         return player;
     }
@@ -157,6 +167,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -170,6 +182,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         player.setScore(score);
         return player;
     }
@@ -183,6 +196,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -196,6 +211,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         player.setScore(score);
         return player;
     }
@@ -210,6 +226,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -223,6 +241,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         player.setScore(score);
         return player;
     }
@@ -236,6 +255,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -249,6 +270,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         player.setScore(score);
         return player;
     }
@@ -258,6 +280,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -271,6 +295,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         return score;
     }
 
@@ -279,6 +304,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.gold_coin);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -292,6 +319,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         return score;
     }
 
@@ -300,6 +328,8 @@ public class GameTest {
         FortuneCard fortuneCard = piratenKapern.drawFortuneCard();
         // change the random card to fixed one
         fortuneCard.setType(FortuneCard.FortuneCardType.captain);
+        System.out.println("The fortune card you draw is \"" + fortuneCard.getType().getType() + "\"");
+
         // first roll
         Map<Integer, Dice.DiceSide> rollResult = piratenKapern.roll();
         //first roll result
@@ -313,6 +343,7 @@ public class GameTest {
         rollResult.put(7, Dice.DiceSide.monkey);
 
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score in current turn is " + score);
         return score;
     }
 
