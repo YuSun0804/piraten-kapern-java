@@ -12,14 +12,12 @@ The following code contains two modules, one is for the client, another is for t
 
 
 ## Running code through IDEA
-- Run:
 ```
 Run the GameServer
 Run the GameClient
 ```
 
 ## Running code through Terminal(With 3 players)
-- Run:
 ```
 mvn clean package
 cd server/target
@@ -36,7 +34,6 @@ java -jar client-1.0-SNAPSHOT.jar
 ```
 
 ## Running code through terminal for row 40
-- Run:
 ```
 mvn clean package
 cd server/target
@@ -53,7 +50,6 @@ java -jar client-1.0-SNAPSHOT.jar 40player3
 ```
 
 ## Running code through terminal for row 43
-- Run:
 ```
 mvn clean package
 cd server/target

@@ -6,15 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="CODE add test player for row 40,43">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/TestPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/TestPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/network/ClientChannel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/network/ClientChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/GameServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,7 +242,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601475032813</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="REFACTORING game server">
+      <created>1601486329266</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1601486329266</updated>
+    </task>
+    <task id="LOCAL-00013" summary="REFACTORING update readme">
+      <created>1601486359669</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1601486359669</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,33 +272,35 @@
     <MESSAGE value="REFACTORING update test print" />
     <MESSAGE value="CODE update pom" />
     <MESSAGE value="CODE add test player for row 40,43" />
-    <option name="LAST_COMMIT_MESSAGE" value="CODE add test player for row 40,43" />
+    <MESSAGE value="REFACTORING game server" />
+    <MESSAGE value="REFACTORING update readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="REFACTORING update readme" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2051" y="224" width="374" height="588" key="#com.intellij.ide.util.MemberChooser" timestamp="1601483269798">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
     <state x="2051" y="224" width="374" height="588" key="#com.intellij.ide.util.MemberChooser/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483269798" />
-    <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2" timestamp="1601479389866">
+    <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2" timestamp="1601486359580">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601479389866" />
-    <state width="1874" height="476" key="GridCell.Tab.0.bottom" timestamp="1601483316296">
+    <state x="1780" y="21" width="916" height="907" key="CommitChangelistDialog2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601486359580" />
+    <state width="1874" height="306" key="GridCell.Tab.0.bottom" timestamp="1601483678675">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="476" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483316296" />
-    <state width="1874" height="476" key="GridCell.Tab.0.center" timestamp="1601483316296">
+    <state width="1874" height="306" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483678675" />
+    <state width="1874" height="306" key="GridCell.Tab.0.center" timestamp="1601483678675">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="476" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483316296" />
-    <state width="1874" height="476" key="GridCell.Tab.0.left" timestamp="1601483316296">
+    <state width="1874" height="306" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483678675" />
+    <state width="1874" height="306" key="GridCell.Tab.0.left" timestamp="1601483678675">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="476" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483316296" />
-    <state width="1874" height="476" key="GridCell.Tab.0.right" timestamp="1601483316296">
+    <state width="1874" height="306" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483678675" />
+    <state width="1874" height="306" key="GridCell.Tab.0.right" timestamp="1601483678675">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="476" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483316296" />
+    <state width="1874" height="306" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601483678675" />
     <state width="1874" height="344" key="GridCell.Tab.1.bottom" timestamp="1601431305601">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
@@ -313,10 +321,10 @@
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
     <state x="1804" y="288" width="868" height="529" key="IDE.errors.dialog/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601404427495" />
-    <state x="1838" y="252" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1601475046515">
+    <state x="1838" y="245" width="800" height="531" key="Vcs.Push.Dialog.v2" timestamp="1601486699090">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state x="1838" y="252" width="800" height="531" key="Vcs.Push.Dialog.v2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601475046515" />
+    <state x="1838" y="245" width="800" height="531" key="Vcs.Push.Dialog.v2/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601486699090" />
     <state x="1976" y="312" width="524" height="481" key="extract.method.dialog" timestamp="1601393700503">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
