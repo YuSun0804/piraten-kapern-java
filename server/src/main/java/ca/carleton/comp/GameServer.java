@@ -92,7 +92,7 @@ public class GameServer {
 
 
     public static void main(String[] args) {
-        int playerNums = 3;
+        int playerNums = 1;
         if (args.length > 0) {
             playerNums = Integer.parseInt(args[0]);
         }
