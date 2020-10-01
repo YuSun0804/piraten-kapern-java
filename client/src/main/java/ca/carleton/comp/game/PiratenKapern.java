@@ -1,10 +1,7 @@
 package ca.carleton.comp.game;
 
-import ca.carleton.comp.network.ClientChannel;
-import ca.carleton.comp.network.WinnerResponse;
 import ca.carleton.comp.util.RandomUtil;
 
-import java.io.IOException;
 import java.util.*;
 
 public class PiratenKapern {
@@ -62,13 +59,13 @@ public class PiratenKapern {
         return true;
     }
 
-    public boolean reRollForSorceress(Player player) {
-        reRollForSorceress(player.getRollResult());
+    public boolean saveOneSkull(Player player) {
+        saveOneSkull(player.getRollResult());
         player.setFortuneCardUsed(true);
         return true;
     }
 
-    public boolean reRollForSorceress(Map<Integer, Dice.DiceSide> rollResult) {
+    public boolean saveOneSkull(Map<Integer, Dice.DiceSide> rollResult) {
         Dice oneSkull = getOneSkull(rollResult);
         Dice.DiceSide diceSide = oneSkull.roll();
         while (diceSide == Dice.DiceSide.skull) {
@@ -323,7 +320,7 @@ public class PiratenKapern {
         }
     }
 
-    public boolean canReRollSkull(Player player) {
+    public boolean canSaveSkull(Player player) {
         if (player.getFortuneCard().getType() == FortuneCard.FortuneCardType.sorceress &&
                 !player.isFortuneCardUsed() && !player.isOnIsland()) {
             return true;

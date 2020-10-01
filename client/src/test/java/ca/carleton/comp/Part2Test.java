@@ -35,17 +35,19 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.parrot);
         System.out.println("The roll result is " + rollResult);
 
-        // re-roll for sorceress
-        boolean result = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("Re-roll 0 due to sorceress.");
-        assertEquals(true, result);
+        //re-roll for sorceress
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(0, 2));
+        System.out.println("Re-roll 0, 2.");
+        piratenKapern.reRoll(indexes, rollResult);
+        rollResult.put(0, Dice.DiceSide.parrot);
+        rollResult.put(2, Dice.DiceSide.monkey);
         System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
         assertEquals(1, countSkull);
 
         //re-roll
-        List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
         System.out.println("Re-roll 5, 6, 7.");
         boolean reRoll = piratenKapern.reRoll(indexes, rollResult);
         assertEquals(true, reRoll);
@@ -84,11 +86,14 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.sword);
         System.out.println("The re-roll result is " + rollResult);
 
-        // re-roll for sorceress
-        boolean result = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("Re-roll 5 due to sorceress.");
-        assertEquals(true, result);
+        //re-roll for sorceress
+        indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
+        piratenKapern.reRoll(indexes, rollResult);
+        rollResult.put(5, Dice.DiceSide.parrot);
+        rollResult.put(6, Dice.DiceSide.monkey);
         System.out.println("The re-roll result is " + rollResult);
+
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
         assertEquals(0, countSkull);
@@ -129,10 +134,12 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.sword);
         System.out.println("The re-roll result is " + rollResult);
 
-        // re-roll for sorceress
-        boolean result = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("Re-roll 5 due to sorceress.");
-        assertEquals(true, result);
+        //re-roll for sorceress
+        indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
+        piratenKapern.reRoll(indexes, rollResult);
+        rollResult.put(5, Dice.DiceSide.parrot);
+        rollResult.put(6, Dice.DiceSide.monkey);
         System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
