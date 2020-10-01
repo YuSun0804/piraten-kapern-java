@@ -623,6 +623,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
         System.out.println("The deduction is " + deduction);
         assertEquals(-700, deduction);
+        int score = piratenKapern.computeScoreOnIsland(rollResult, fortuneCard, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -658,6 +661,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
         System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
+        int score = piratenKapern.computeScoreOnIsland(rollResult, fortuneCard, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -702,6 +708,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
         System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
+        int score = piratenKapern.computeScoreOnIsland(rollResult, fortuneCard, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -730,6 +739,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         System.out.println("The deduction is " + deduction);
         assertEquals(-300, deduction);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -758,6 +770,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -786,6 +801,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         System.out.println("The deduction is " + deduction);
         assertEquals(-1000, deduction);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
