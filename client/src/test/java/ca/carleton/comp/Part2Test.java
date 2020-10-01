@@ -44,6 +44,7 @@ public class Part2Test {
         System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
+        System.out.println("The skull count " + countSkull);
         assertEquals(1, countSkull);
 
         //re-roll
@@ -96,6 +97,7 @@ public class Part2Test {
 
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
+        System.out.println("The skull count " + countSkull);
         assertEquals(0, countSkull);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertTrue(score > 0);
@@ -143,6 +145,7 @@ public class Part2Test {
         System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
+        System.out.println("The skull count " + countSkull);
         assertEquals(0, countSkull);
 
         //re-roll
