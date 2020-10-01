@@ -134,13 +134,16 @@ public class PiratenKapern {
         return 0;
     }
 
-    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
+    public int computeScoreOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, Map<Integer, Dice.DiceSide> treasureChest) {
         int skullCount = countSkull(rollResult, fortuneCard);
 
-        if (onIsland && skullCount >= 4) {
-            return computeDeductionOnIsland(rollResult, fortuneCard);
+        if (skullCount >= 4) {
+            return 0;
         }
+        return computeScore(rollResult, fortuneCard, treasureChest, skullCount);
+    }
 
+    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, Map<Integer, Dice.DiceSide> treasureChest, int skullCount) {
         if (skullCount >= 3) {
             System.out.println(Constant.DIE_WITH_SKULL);
             if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
@@ -169,6 +172,16 @@ public class PiratenKapern {
 
         if (score < 0) score = 0;
         return score;
+    }
+
+    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
+        int skullCount = countSkull(rollResult, fortuneCard);
+
+        if (onIsland && skullCount >= 4) {
+            return computeDeductionOnIsland(rollResult, fortuneCard);
+        }
+
+        return computeScore(rollResult, fortuneCard, treasureChest, skullCount);
     }
 
     private int computeBaseScore(int[] counts) {
