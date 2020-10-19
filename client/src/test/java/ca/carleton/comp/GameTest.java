@@ -24,7 +24,7 @@ public class GameTest {
     @Test
     public void game40Test() {
         try {
-            new Thread(() -> new GameServer(3)).start();
+            new Thread(() -> new GameServer(3, false)).start();
             //make sure server is started
             Thread.sleep(1000);
 
@@ -52,7 +52,7 @@ public class GameTest {
     @Test
     public void game43Test() {
         try {
-            new Thread(() -> new GameServer(3)).start();
+            new Thread(() -> new GameServer(3, false)).start();
             //make sure server is started
             Thread.sleep(1000);
 

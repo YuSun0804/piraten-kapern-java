@@ -71,6 +71,15 @@ public class Dice {
             return unknown;
         }
 
+        public static DiceSide getByName(String name) {
+            for (DiceSide diceSide : DiceSide.values()) {
+                if (diceSide.name.equals(name)) {
+                    return diceSide;
+                }
+            }
+            return unknown;
+        }
+
         public int getIndex() {
             return index;
         }

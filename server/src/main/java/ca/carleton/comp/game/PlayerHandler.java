@@ -12,13 +12,15 @@ public class PlayerHandler implements Runnable {
     private ServerChannel serverChannel;
     private GameServer gameServer;
     private boolean greeting;
+    private boolean silence;
 
 
-    public PlayerHandler(GameServer gameServer, int playerIndex, ServerChannel serverChannel) {
+    public PlayerHandler(GameServer gameServer, int playerIndex, ServerChannel serverChannel, boolean silence) {
         this.serverChannel = serverChannel;
         this.gameServer = gameServer;
         this.playerIndex = playerIndex;
         this.greeting = true;
+        this.silence = silence;
     }
 
     private void sendGreetingMessage(String playerName) throws IOException {
@@ -32,7 +34,9 @@ public class PlayerHandler implements Runnable {
                 String message = this.serverChannel.read();
                 gameServer.getScorePad().getByPlayerIndex(playerIndex).setPlayerName(message);
                 sendGreetingMessage(message);
-                System.out.println(message + " joined the game.");
+                if (!silence) {
+                    System.out.println(message + " joined the game.");
+                }
                 playerName = message;
                 greeting = false;
             }

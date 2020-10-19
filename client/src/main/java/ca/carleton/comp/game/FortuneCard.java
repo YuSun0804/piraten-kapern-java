@@ -71,24 +71,25 @@ public class FortuneCard {
         - 2 4-sabre sea battle cards
          */
     public enum FortuneCardType {
-        gold_coin("gold coin", 4),
-        diamonds("diamonds", 4),
-        sorceress("sorceress", 4),
-        captain("captain", 4),
-        treasure_chest("treasure chest", 4),
-        monkey_business("monkey business", 4),
-        one_skull("1-skull", 3),
-        two_skull("2-skull ", 2),
-        two_sabre("2-sabre sea battle cards", 2),
-        three_sabre("3-sabre sea battle cards", 2),
-        four_sabre("4-sabre sea battle cards", 2),
-        unknown("unknown", 0);;
+        gold_coin(1, "gold coin", 4),
+        diamonds(2, "diamonds", 4),
+        sorceress(3, "sorceress", 4),
+        captain(4, "captain", 4),
+        treasure_chest(5, "treasure chest", 4),
+        monkey_business(6, "monkey business", 4),
+        one_skull(7, "1-skull", 3),
+        two_skull(8, "2-skull ", 2),
+        two_sabre(9, "2-sabre sea battle cards", 2),
+        three_sabre(10, "3-sabre sea battle cards", 2),
+        four_sabre(11, "4-sabre sea battle cards", 2),
+        unknown(12, "unknown", 0);;
 
+        private int index;
         private String type;
-
         private int size;
 
-        FortuneCardType(String type, int size) {
+        FortuneCardType(int index, String type, int size) {
+            this.index = index;
             this.type = type;
             this.size = size;
         }
@@ -100,6 +101,20 @@ public class FortuneCard {
         public String getType() {
             return type;
         }
+
+        public int getIndex() {
+            return index;
+        }
+
+        public static FortuneCardType getByIndex(int index) {
+            for (FortuneCardType fortuneCardType : FortuneCardType.values()) {
+                if (fortuneCardType.getIndex() == index) {
+                    return fortuneCardType;
+                }
+            }
+            return unknown;
+        }
     }
+
 
 }

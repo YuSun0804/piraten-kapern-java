@@ -34,7 +34,7 @@ public class GameServer {
         return turnNum;
     }
 
-    public GameServer(int playerNums) {
+    public GameServer(int playerNums, boolean silence) {
         System.out.println("Starting game server");
         serverChannelList = new ArrayList<>();
         playerHandlerList = new ArrayList<>();
@@ -46,6 +46,7 @@ public class GameServer {
             serverSocket = new ServerSocket(3333);
             System.out.println("Game server started with " + playerNums + " player(s)");
 
+
             while (playerIndex < playerNums) {
                 Socket socket = serverSocket.accept();
 
@@ -55,7 +56,7 @@ public class GameServer {
                 ServerChannel serverChannel = new ServerChannel(playerIndex, socket);
                 serverChannelList.add(serverChannel);
 
-                PlayerHandler playerHandler = new PlayerHandler(this, playerIndex, serverChannel);
+                PlayerHandler playerHandler = new PlayerHandler(this, playerIndex, serverChannel, silence);
                 playerHandlerList.add(playerHandler);
 
                 handlerThreadPool.submit(playerHandler);
@@ -75,8 +76,9 @@ public class GameServer {
                 countDownLatch.await();
                 winnerScore = scorePad.computeWinner();
             }
-
-            System.out.println("The winner is " + winnerScore.getPlayerName() + " , with score " + winnerScore.getFinalScore() + " in all turns");
+            if (!silence) {
+                System.out.println("The winner is " + winnerScore.getPlayerName() + " , with score " + winnerScore.getFinalScore() + " in all turns");
+            }
             for (PlayerHandler playerHandler : playerHandlerList) {
                 playerHandler.sendWinner(winnerScore);
             }
@@ -96,6 +98,6 @@ public class GameServer {
         if (args.length > 0) {
             playerNums = Integer.parseInt(args[0]);
         }
-        new GameServer(playerNums);
+        new GameServer(playerNums, false);
     }
 }

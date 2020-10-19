@@ -103,6 +103,9 @@ public class PiratenKapern {
 
     public int computeDeductionOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
         int skullCount = countSkull(rollResult, fortuneCard);
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.captain) {
+            return (0 - skullCount * 100) * 2;
+        }
         return 0 - skullCount * 100;
 
     }
@@ -270,9 +273,9 @@ public class PiratenKapern {
         return count;
     }
 
-    public int countSkull(Map<Integer, Dice.DiceSide> diceSideMap, FortuneCard fortuneCard) {
+    public int countSkull(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard) {
         int count = 0;
-        Set<Map.Entry<Integer, Dice.DiceSide>> entries = diceSideMap.entrySet();
+        Set<Map.Entry<Integer, Dice.DiceSide>> entries = rollResult.entrySet();
         for (Map.Entry<Integer, Dice.DiceSide> entry : entries) {
             if (entry.getValue() == Dice.DiceSide.skull) {
                 diceList.get(entry.getKey()).setStatus(0);
