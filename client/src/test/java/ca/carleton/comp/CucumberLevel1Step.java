@@ -54,11 +54,9 @@ public class CucumberLevel1Step {
         System.out.println("The roll result is " + rollResult);
     }
 
-    @And("Re-Roll dice due to sorceress")
-    public void reRollForSorceress() {
-        System.out.println("Re-roll due to sorceress.");
-        reRoll = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("The result after using the sorceress card is " + rollResult);
+    @And("Re-Roll dice {string} due to sorceress, and get {string}")
+    public void reRollForSorceress(String indexes, String rollRes) {
+        this.reRoll(indexes, rollRes);
     }
 
     @And("Re-Roll dice {string}, and get {string}")

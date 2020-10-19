@@ -4,6 +4,7 @@ import ca.carleton.comp.GameServer;
 import ca.carleton.comp.network.ServerChannel;
 
 import java.io.IOException;
+import java.util.List;
 
 public class PlayerHandler implements Runnable {
 
@@ -42,19 +43,24 @@ public class PlayerHandler implements Runnable {
             }
 
             String message = this.serverChannel.read();
-            serPlayerScore(message);
-            gameServer.getCountDownLatch().countDown();
             System.out.println(playerName + " finished the turn " + gameServer.getTurnNum());
+            setPlayerScore(message);
+            gameServer.getCountDownLatch().countDown();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void serPlayerScore(String scoreAndDeduction) {
+    private void setPlayerScore(String scoreAndDeduction) {
         String[] split = scoreAndDeduction.split(",");
         ScoreRecord scoreRecord = gameServer.getScorePad().getByPlayerIndex(playerIndex);
         scoreRecord.setClientScore(Integer.parseInt(split[0]));
         scoreRecord.setDeduction(Integer.parseInt(split[1]));
+
+        if (scoreRecord.getClientScore() + scoreRecord.getFinalScore() > 6000) {
+            System.out.println("Player " + playerName + " get more than 6000, waiting other players complete current turn.");
+        }
+
     }
 
     public void sendScore() throws IOException {

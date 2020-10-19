@@ -5,31 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1104d4c-5e70-4d59-9548-02da886ebd56" name="Default Changelist" comment="CODE add test player for row 40,43">
-      <change afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/CucumberLevel1Step.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/CucumberLevel2Step.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/CucumberTestAll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/resources/cucumber.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1a.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1b.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/test/resources/playRound.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/FortuneCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/FortuneCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ca/carleton/comp/game/PiratenKapern.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/maven-archiver/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/TEST-ca.carleton.comp.Part1Test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/target/surefire-reports/ca.carleton.comp.Part1Test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/GameServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/GameServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/CucumberLevel1Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/CucumberLevel1Step.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1a.feature" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1a.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1b.feature" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1b.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,33 +47,29 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/test/resources" />
-=======
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
->>>>>>> 898e81ba04704ff972047616759f5f399d9e03d9
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/client/src/test/resources" />
-      <recent name="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="ca.carleton.comp" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="ca.carleton.comp" />
-      <recent name="ca.carleton.comp.game" />
-      <recent name="ca.carleton.comp.network" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/client/src/test/resources" />
       <recent name="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp" />
       <recent name="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ca.carleton.comp" />
+      <recent name="ca.carleton.comp.game" />
+      <recent name="ca.carleton.comp.network" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/client/src/test/resources" />
+      <recent name="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp" />
+    </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: T127">
+  <component name="RunManager" selected="JUnit.CucumberTestAll">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -101,46 +77,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Play an entire game" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="4" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/gameNetwork.feature" />
-      <option name="GLUE" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="cucumber.api.cli.Main" />
-      <module name="client" />
-      <option name="NAME_FILTER" value="^Play an entire game$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm4SMFormatter --name &quot;^Play an entire game$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Play an entire game" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cucumber.api.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: T125" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/client/src/test/resources/playRound.feature" />
-      <option name="GLUE" value="ca.carleton.comp" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="client" />
-      <option name="NAME_FILTER" value="^T125$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^T125$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: T125" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,15 +101,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Test119" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Test3940" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1b.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1a.feature" />
       <option name="GLUE" value="ca.carleton.comp" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="client" />
-      <option name="NAME_FILTER" value="^Test119$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test119$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Test119" />
+      <option name="NAME_FILTER" value="^Test3940$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test3940$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Test3940" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -185,15 +121,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Test120" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Test50" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1a.feature" />
+      <option name="GLUE" value="ca.carleton.comp" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="client" />
+      <option name="NAME_FILTER" value="^Test50$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test50$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Test50" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Test72" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/client/src/test/resources/cucumberLevel1b.feature" />
       <option name="GLUE" value="ca.carleton.comp" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="client" />
-      <option name="NAME_FILTER" value="^Test120$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test120$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Test120" />
+      <option name="NAME_FILTER" value="^Test72$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Test72$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Test72" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -221,19 +177,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Cucumber Java.Scenario: Test119" />
-      <item itemvalue="Cucumber Java.Scenario: Test120" />
-      <item itemvalue="JUnit.CucumberTestAll" />
-      <item itemvalue="Cucumber Java.Scenario: T125" />
       <item itemvalue="Cucumber Java.Scenario: T127" />
+      <item itemvalue="Cucumber Java.Scenario: Test72" />
+      <item itemvalue="Cucumber Java.Scenario: Test3940" />
+      <item itemvalue="Cucumber Java.Scenario: Test50" />
+      <item itemvalue="JUnit.CucumberTestAll" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: T127" />
-        <item itemvalue="Cucumber Java.Scenario: T125" />
         <item itemvalue="JUnit.CucumberTestAll" />
-        <item itemvalue="Cucumber Java.Scenario: Test120" />
-        <item itemvalue="Cucumber Java.Scenario: Test119" />
+        <item itemvalue="Cucumber Java.Scenario: Test50" />
+        <item itemvalue="Cucumber Java.Scenario: Test3940" />
+        <item itemvalue="Cucumber Java.Scenario: T127" />
+        <item itemvalue="Cucumber Java.Scenario: Test72" />
       </list>
     </recent_temporary>
   </component>
@@ -246,15 +202,10 @@
       <option name="presentableId" value="Default" />
       <updated>1601351150012</updated>
       <workItem from="1601351151411" duration="8775000" />
-<<<<<<< HEAD
       <workItem from="1601493824220" duration="1219000" />
       <workItem from="1602712966203" duration="11959000" />
       <workItem from="1602856934962" duration="2228000" />
       <workItem from="1602951734278" duration="37382000" />
-=======
-      <workItem from="1601493824220" duration="958000" />
-      <workItem from="1601519810616" duration="554000" />
->>>>>>> 898e81ba04704ff972047616759f5f399d9e03d9
     </task>
     <task id="LOCAL-00001" summary="REFACTORING compute winner">
       <created>1601422656525</created>
@@ -402,25 +353,25 @@
     </state>
     <state x="497" y="421" width="376" height="361" key="FileChooserDialogImpl/1280.0.1920.1080/0.202.1280.800@0.202.1280.800" timestamp="1602863166250" />
     <state x="2026" y="292" width="424" height="487" key="FileChooserDialogImpl/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603035063929" />
-    <state width="1874" height="386" key="GridCell.Tab.0.bottom" timestamp="1603081041113">
+    <state width="1874" height="386" key="GridCell.Tab.0.bottom" timestamp="1603084500090">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="386" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603081041113" />
+    <state width="1874" height="386" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603084500090" />
     <state width="1874" height="344" key="GridCell.Tab.0.bottom/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601491057871" />
-    <state width="1874" height="386" key="GridCell.Tab.0.center" timestamp="1603081041113">
+    <state width="1874" height="386" key="GridCell.Tab.0.center" timestamp="1603084500089">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="386" key="GridCell.Tab.0.center/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603081041113" />
+    <state width="1874" height="386" key="GridCell.Tab.0.center/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603084500089" />
     <state width="1874" height="344" key="GridCell.Tab.0.center/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601491057871" />
-    <state width="1874" height="386" key="GridCell.Tab.0.left" timestamp="1603081041112">
+    <state width="1874" height="386" key="GridCell.Tab.0.left" timestamp="1603084500089">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="386" key="GridCell.Tab.0.left/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603081041112" />
+    <state width="1874" height="386" key="GridCell.Tab.0.left/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603084500089" />
     <state width="1874" height="344" key="GridCell.Tab.0.left/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601491057871" />
-    <state width="1874" height="386" key="GridCell.Tab.0.right" timestamp="1603081041113">
+    <state width="1874" height="386" key="GridCell.Tab.0.right" timestamp="1603084500089">
       <screen x="1280" y="0" width="1920" height="1080" />
     </state>
-    <state width="1874" height="386" key="GridCell.Tab.0.right/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603081041113" />
+    <state width="1874" height="386" key="GridCell.Tab.0.right/1280.0.1920.1080/0.202.1280.800@1280.0.1920.1080" timestamp="1603084500089" />
     <state width="1874" height="344" key="GridCell.Tab.0.right/1280.0.1920.1080/0.280.1280.800@1280.0.1920.1080" timestamp="1601491057871" />
     <state width="1874" height="477" key="GridCell.Tab.1.bottom" timestamp="1603080526669">
       <screen x="1280" y="0" width="1920" height="1080" />

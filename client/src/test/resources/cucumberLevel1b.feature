@@ -7,12 +7,12 @@ Feature: Test features for Level 1a
     Given Start Game
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
-    And Re-Roll dice due to sorceress
+    And Re-Roll dice <reRollIndexes> due to sorceress, and get <reRollResult>
     Then Player get <skullCount> skull(s)
     And Player can go to next round <can>
     Examples:
-      | fortuneCard | rollResult                                                                     | skullCount | can  |
-      | "sorceress" | "0=skull, 1=skull, 2=monkey, 3=monkey, 4=monkey, 5=diamond, 6=diamond, 7=coin" | 1          | true |
+      | fortuneCard | rollResult                                                                     | reRollIndexes | reRollResult         | skullCount | can  |
+      | "sorceress" | "0=skull, 1=skull, 2=monkey, 3=monkey, 4=monkey, 5=diamond, 6=diamond, 7=coin" | "1,2"         | "1=monkey, 2=parrot" | 1          | true |
 
   @Test71
   Scenario Outline: Test71
@@ -20,12 +20,12 @@ Feature: Test features for Level 1a
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
     And Re-Roll dice <reRollIndexes>, and get <reRollResult>
-    And Re-Roll dice due to sorceress
+    And Re-Roll dice <reRollIndexes2> due to sorceress, and get <reRollResult2>
     Then Player get <skullCount> skull(s)
     And Player score more than <score>
     Examples:
-      | fortuneCard | rollResult                                                                       | reRollIndexes | reRollResult        | skullCount | score |
-      | "sorceress" | "0=monkey, 1=monkey, 2=monkey, 3=monkey, 4=monkey, 5=diamond, 6=diamond, 7=coin" | "6,7"         | "6=skull, 7=monkey" | 0          | 300   |
+      | fortuneCard | rollResult                                                                       | reRollIndexes | reRollResult        | reRollIndexes2 | reRollResult2        | skullCount | score |
+      | "sorceress" | "0=monkey, 1=monkey, 2=monkey, 3=monkey, 4=monkey, 5=diamond, 6=diamond, 7=coin" | "6,7"         | "6=skull, 7=monkey" | "6,7"          | "6=monkey, 7=parrot" | 0          | 300   |
 
   @Test72
   Scenario Outline: Test72
@@ -33,12 +33,12 @@ Feature: Test features for Level 1a
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
     And Re-Roll dice <reRollIndexes>, and get <reRollResult>
-    And Re-Roll dice due to sorceress
+    And Re-Roll dice <reRollIndexes2> due to sorceress, and get <reRollResult2>
     Then Player get <skullCount> skull(s)
     And Player can go to next round <can>
     Examples:
-      | fortuneCard | rollResult                                                                       | reRollIndexes | reRollResult        | skullCount | can  |
-      | "sorceress" | "0=monkey, 1=monkey, 2=monkey, 3=monkey, 4=monkey, 5=diamond, 6=diamond, 7=coin" | "6,7"         | "6=skull, 7=monkey" | 0          | true |
+      | fortuneCard | rollResult                                                                       | reRollIndexes | reRollResult        | reRollIndexes2 | reRollResult2        | skullCount | can  |
+      | "sorceress" | "0=monkey, 1=monkey, 2=monkey, 3=monkey, 4=monkey, 5=diamond, 6=diamond, 7=coin" | "6,7"         | "6=skull, 7=monkey" | "6,7"          | "6=monkey, 7=parrot" | 0          | true |
 
   @Test75
   Scenario Outline: Test75
@@ -50,8 +50,8 @@ Feature: Test features for Level 1a
       | fortuneCard       | rollResult                                                                    | score |
       | "monkey_business" | "0=skull, 1=parrot, 2=parrot, 3=parrot, 4=monkey, 5=monkey, 6=monkey, 7=coin" | 1100  |
 
-  @Test76
-  Scenario Outline: Test76
+  @Test7677
+  Scenario Outline: Test7677
     Given Start Game
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
@@ -59,20 +59,9 @@ Feature: Test features for Level 1a
     And Re-Roll dice <reRollIndexes2>, and get <reRollResult2>
     Then Player get <score>
     Examples:
-      | fortuneCard       | rollResult                                                                | reRollIndexes | reRollResult                  | reRollIndexes2 | reRollResult2      | score |
-      | "monkey_business" | "0=monkey, 1=monkey, 2=parrot, 3=coin, 4=coin, 5=sword, 6=sword, 7=sword" | "5,6,7"       | "5=diamond, 6=sword, 7=sword" | "6,7"          | "6=sword, 7=sword" | 400   |
-
-  @Test77
-  Scenario Outline: Test77
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    And Re-Roll dice <reRollIndexes>, and get <reRollResult>
-    And Re-Roll dice <reRollIndexes2>, and get <reRollResult2>
-    Then Player get <score>
-    Examples:
-      | fortuneCard       | rollResult                                                                    | reRollIndexes | reRollResult                 | reRollIndexes2 | reRollResult2       | score |
-      | "monkey_business" | "0=monkey, 1=monkey, 2=monkey, 3=parrot, 4=parrot, 5=sword, 6=sword, 7=sword" | "5,6,7"       | "5=parrot, 6=sword, 7=sword" | "6,7"          | "6=parrot, 7=sword" | 2000  |
+      | fortuneCard       | rollResult                                                                    | reRollIndexes | reRollResult                  | reRollIndexes2 | reRollResult2       | score |
+      | "monkey_business" | "0=monkey, 1=monkey, 2=parrot, 3=coin, 4=coin, 5=sword, 6=sword, 7=sword"     | "5,6,7"       | "5=diamond, 6=sword, 7=sword" | "6,7"          | "6=sword, 7=sword"  | 400   |
+      | "monkey_business" | "0=monkey, 1=monkey, 2=monkey, 3=parrot, 4=parrot, 5=sword, 6=sword, 7=sword" | "5,6,7"       | "5=parrot, 6=sword, 7=sword"  | "6,7"          | "6=parrot, 7=sword" | 2000  |
 
   @Test80
   Scenario Outline: Test80
@@ -102,8 +91,8 @@ Feature: Test features for Level 1a
       | fortuneCard      | rollResult                                                               | inChest | reRollIndexes | reRollResult                   | inChest2 | reRollIndexes2 | reRollResult2     | score |
       | "treasure_chest" | "0=skull, 1=skull, 2=parrot, 3=parrot, 4=parrot, 5=coin, 6=coin, 7=coin" | "5,6,7" | "2,3,4"       | "2=diamond, 3=diamond, 4=coin" | "4"      | "2,3"          | "2=skull, 3=coin" | 600   |
 
-  @Test91
-  Scenario Outline: Test91
+  @Test91-93
+  Scenario Outline: Test91-93
     Given Start Game
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
@@ -111,26 +100,8 @@ Feature: Test features for Level 1a
     Examples:
       | fortuneCard | rollResult                                                                     | score |
       | "gold_coin" | "0=monkey, 1=monkey, 2=monkey, 3=sword, 4=sword, 5=sword, 6=diamond, 7=parrot" | 400   |
-
-  @Test92
-  Scenario Outline: Test92
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    Then Player get <score>
-    Examples:
-      | fortuneCard | rollResult                                                                | score |
-      | "captain"   | "0=monkey, 1=monkey, 2=monkey, 3=sword, 4=sword, 5=sword, 6=coin, 7=coin" | 1800  |
-
-  @Test93
-  Scenario Outline: Test93
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    Then Player get <score>
-    Examples:
-      | fortuneCard | rollResult                                                                    | score |
-      | "gold_coin" | "0=monkey, 1=monkey, 2=monkey, 3=sword, 4=sword, 5=sword, 6=sword, 7=diamond" | 1000  |
+      | "captain"   | "0=monkey, 1=monkey, 2=monkey, 3=sword, 4=sword, 5=sword, 6=coin, 7=coin"      | 1800  |
+      | "gold_coin" | "0=monkey, 1=monkey, 2=monkey, 3=sword, 4=sword, 5=sword, 6=sword, 7=diamond"  | 1000  |
 
   @Test94
   Scenario Outline: Test94
@@ -143,8 +114,8 @@ Feature: Test features for Level 1a
       | fortuneCard | rollResult                                                                    | reRollIndexes | reRollResult      | score |
       | "two_sabre" | "0=monkey, 1=monkey, 2=monkey, 3=monkey, 4=sword, 5=parrot, 6=parrot, 7=coin" | "5,6"         | "5=coin, 6=sword" | 1200  |
 
-  @Test97
-  Scenario Outline: Test97
+  @Test97100101
+  Scenario Outline: Test97100101
     Given Start Game
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
@@ -152,26 +123,8 @@ Feature: Test features for Level 1a
     Examples:
       | fortuneCard       | rollResult                                                                      | score |
       | "monkey_business" | "0=monkey, 1=monkey, 2=parrot, 3=coin, 4=coin, 5=diamond, 6=diamond, 7=diamond" | 1200  |
-
-  @Test100
-  Scenario Outline: Test100
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    Then Player get <score>
-    Examples:
-      | fortuneCard | rollResult                                                                     | score |
-      | "two_skull" | "0=skull, 1=monkey, 2=parrot, 3=coin, 4=coin, 5=diamond, 6=diamond, 7=diamond" | 0     |
-
-  @Test101
-  Scenario Outline: Test101
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    Then Player get <score>
-    Examples:
-      | fortuneCard | rollResult                                                                    | score |
-      | "one_skull" | "0=skull, 1=skull, 2=parrot, 3=coin, 4=coin, 5=diamond, 6=diamond, 7=diamond" | 0     |
+      | "two_skull"       | "0=skull, 1=monkey, 2=parrot, 3=coin, 4=coin, 5=diamond, 6=diamond, 7=diamond"  | 0     |
+      | "one_skull"       | "0=skull, 1=skull, 2=parrot, 3=coin, 4=coin, 5=diamond, 6=diamond, 7=diamond"   | 0     |
 
   @Test102
   Scenario Outline: Test102
@@ -218,36 +171,17 @@ Feature: Test features for Level 1a
       | fortuneCard | rollResult                                                                  | reRollIndexes | reRollResult        | reRollIndexes2 | reRollResult2        | deduction |
       | "one_skull" | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=coin, 7=parrot" | "3,4"         | "3=skull, 4=monkey" | "4,5"          | "4=monkey, 5=monkey" | -500      |
 
-  @Test109
-  Scenario Outline: Test109
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    Then Player lose <deduction>
-    Examples:
-      | fortuneCard | rollResult                                                                  | deduction |
-      | "two_sabre" | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -300      |
-
-  @Test110
-  Scenario Outline: Test110
+  @Test109-111
+  Scenario Outline: Test109-111
     Given Start Game
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
     Then Player lose <deduction>
     Examples:
       | fortuneCard   | rollResult                                                                  | deduction |
+      | "two_sabre"   | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -300      |
       | "three_sabre" | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -500      |
-
-  @Test111
-  Scenario Outline: Test111
-    Given Start Game
-    When Draw fortuneCard, and get <fortuneCard>
-    And Roll dice, and get <rollResult>
-    Then Player lose <deduction>
-    Examples:
-      | fortuneCard  | rollResult                                                                  | deduction |
-      | "four_sabre" | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -1000     |
-
+      | "four_sabre"  | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -1000     |
 
   @Test113
   Scenario Outline: Test113
