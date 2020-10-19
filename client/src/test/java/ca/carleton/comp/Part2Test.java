@@ -35,17 +35,20 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.parrot);
         System.out.println("The roll result is " + rollResult);
 
-        // re-roll for sorceress
-        boolean result = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("Re-roll 0 due to sorceress.");
-        assertEquals(true, result);
+        //re-roll for sorceress
+        List<Integer> indexes = new ArrayList<>(Arrays.asList(0, 2));
+        System.out.println("Re-roll 0, 2.");
+        piratenKapern.reRoll(indexes, rollResult);
+        rollResult.put(0, Dice.DiceSide.parrot);
+        rollResult.put(2, Dice.DiceSide.monkey);
         System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
+        System.out.println("The skull count " + countSkull);
         assertEquals(1, countSkull);
 
         //re-roll
-        List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
+        indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
         System.out.println("Re-roll 5, 6, 7.");
         boolean reRoll = piratenKapern.reRoll(indexes, rollResult);
         assertEquals(true, reRoll);
@@ -84,13 +87,17 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.sword);
         System.out.println("The re-roll result is " + rollResult);
 
-        // re-roll for sorceress
-        boolean result = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("Re-roll 5 due to sorceress.");
-        assertEquals(true, result);
+        //re-roll for sorceress
+        indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
+        piratenKapern.reRoll(indexes, rollResult);
+        rollResult.put(5, Dice.DiceSide.parrot);
+        rollResult.put(6, Dice.DiceSide.monkey);
         System.out.println("The re-roll result is " + rollResult);
 
+
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
+        System.out.println("The skull count " + countSkull);
         assertEquals(0, countSkull);
         int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
         assertTrue(score > 0);
@@ -129,13 +136,16 @@ public class Part2Test {
         rollResult.put(7, Dice.DiceSide.sword);
         System.out.println("The re-roll result is " + rollResult);
 
-        // re-roll for sorceress
-        boolean result = piratenKapern.reRollForSorceress(rollResult);
-        System.out.println("Re-roll 5 due to sorceress.");
-        assertEquals(true, result);
+        //re-roll for sorceress
+        indexes = new ArrayList<>(Arrays.asList(5, 6));
+        System.out.println("Re-roll 5, 6.");
+        piratenKapern.reRoll(indexes, rollResult);
+        rollResult.put(5, Dice.DiceSide.parrot);
+        rollResult.put(6, Dice.DiceSide.monkey);
         System.out.println("The re-roll result is " + rollResult);
 
         int countSkull = piratenKapern.countSkull(rollResult, fortuneCard);
+        System.out.println("The skull count " + countSkull);
         assertEquals(0, countSkull);
 
         //re-roll
@@ -613,6 +623,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
         System.out.println("The deduction is " + deduction);
         assertEquals(-700, deduction);
+        int score = piratenKapern.computeScoreOnIsland(rollResult, fortuneCard, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -648,6 +661,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
         System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
+        int score = piratenKapern.computeScoreOnIsland(rollResult, fortuneCard, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -692,6 +708,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeDeductionOnIsland(rollResult, fortuneCard);
         System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
+        int score = piratenKapern.computeScoreOnIsland(rollResult, fortuneCard, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -720,6 +739,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         System.out.println("The deduction is " + deduction);
         assertEquals(-300, deduction);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -748,6 +770,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         System.out.println("The deduction is " + deduction);
         assertEquals(-500, deduction);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test
@@ -776,6 +801,9 @@ public class Part2Test {
         int deduction = piratenKapern.computeSeaBattle(rollResult, fortuneCard, canContinue);
         System.out.println("The deduction is " + deduction);
         assertEquals(-1000, deduction);
+        int score = piratenKapern.computeScore(rollResult, fortuneCard, false, null);
+        System.out.println("The score is " + score);
+        assertEquals(0, score);
     }
 
     @Test

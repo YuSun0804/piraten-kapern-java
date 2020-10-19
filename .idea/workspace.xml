@@ -28,6 +28,8 @@
       <change beforePath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/TEST-ca.carleton.comp.ScoreTest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/surefire-reports/ca.carleton.comp.ScoreTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/ca/carleton/comp/Part2Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +67,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+<<<<<<< HEAD
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/test/resources" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+>>>>>>> 898e81ba04704ff972047616759f5f399d9e03d9
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -240,10 +246,15 @@
       <option name="presentableId" value="Default" />
       <updated>1601351150012</updated>
       <workItem from="1601351151411" duration="8775000" />
+<<<<<<< HEAD
       <workItem from="1601493824220" duration="1219000" />
       <workItem from="1602712966203" duration="11959000" />
       <workItem from="1602856934962" duration="2228000" />
       <workItem from="1602951734278" duration="37382000" />
+=======
+      <workItem from="1601493824220" duration="958000" />
+      <workItem from="1601519810616" duration="554000" />
+>>>>>>> 898e81ba04704ff972047616759f5f399d9e03d9
     </task>
     <task id="LOCAL-00001" summary="REFACTORING compute winner">
       <created>1601422656525</created>

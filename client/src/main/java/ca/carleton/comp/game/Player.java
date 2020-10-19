@@ -217,9 +217,9 @@ public class Player {
 
     protected boolean doAfterRoll() {
         if (!piratenKapern.canContinue(this)) {
-            if (piratenKapern.canReRollSkull(this)) {
+            if (piratenKapern.canSaveSkull(this)) {
                 System.out.println("One of the skull dice will re-roll, since you have a sorceress card");
-                piratenKapern.reRollForSorceress(this);
+                piratenKapern.saveOneSkull(this);
                 System.out.println("The result after sorceress card used is  " + rollResult);
             } else {
                 piratenKapern.computeScore(this);

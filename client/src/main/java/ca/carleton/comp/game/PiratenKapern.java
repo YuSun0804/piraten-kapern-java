@@ -1,10 +1,7 @@
 package ca.carleton.comp.game;
 
-import ca.carleton.comp.network.ClientChannel;
-import ca.carleton.comp.network.WinnerResponse;
 import ca.carleton.comp.util.RandomUtil;
 
-import java.io.IOException;
 import java.util.*;
 
 public class PiratenKapern {
@@ -62,13 +59,13 @@ public class PiratenKapern {
         return true;
     }
 
-    public boolean reRollForSorceress(Player player) {
-        reRollForSorceress(player.getRollResult());
+    public boolean saveOneSkull(Player player) {
+        saveOneSkull(player.getRollResult());
         player.setFortuneCardUsed(true);
         return true;
     }
 
-    public boolean reRollForSorceress(Map<Integer, Dice.DiceSide> rollResult) {
+    public boolean saveOneSkull(Map<Integer, Dice.DiceSide> rollResult) {
         Dice oneSkull = getOneSkull(rollResult);
         Dice.DiceSide diceSide = oneSkull.roll();
         while (diceSide == Dice.DiceSide.skull) {
@@ -140,13 +137,16 @@ public class PiratenKapern {
         return 0;
     }
 
-    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
+    public int computeScoreOnIsland(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, Map<Integer, Dice.DiceSide> treasureChest) {
         int skullCount = countSkull(rollResult, fortuneCard);
 
-        if (onIsland && skullCount >= 4) {
-            return computeDeductionOnIsland(rollResult, fortuneCard);
+        if (skullCount >= 4) {
+            return 0;
         }
+        return computeScore(rollResult, fortuneCard, treasureChest, skullCount);
+    }
 
+    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, Map<Integer, Dice.DiceSide> treasureChest, int skullCount) {
         if (skullCount >= 3) {
             System.out.println(Constant.DIE_WITH_SKULL);
             if (fortuneCard.getType() == FortuneCard.FortuneCardType.treasure_chest) {
@@ -175,6 +175,16 @@ public class PiratenKapern {
 
         if (score < 0) score = 0;
         return score;
+    }
+
+    public int computeScore(Map<Integer, Dice.DiceSide> rollResult, FortuneCard fortuneCard, boolean onIsland, Map<Integer, Dice.DiceSide> treasureChest) {
+        int skullCount = countSkull(rollResult, fortuneCard);
+
+        if (onIsland && skullCount >= 4) {
+            return computeDeductionOnIsland(rollResult, fortuneCard);
+        }
+
+        return computeScore(rollResult, fortuneCard, treasureChest, skullCount);
     }
 
     private int computeBaseScore(int[] counts) {
@@ -326,7 +336,7 @@ public class PiratenKapern {
         }
     }
 
-    public boolean canReRollSkull(Player player) {
+    public boolean canSaveSkull(Player player) {
         if (player.getFortuneCard().getType() == FortuneCard.FortuneCardType.sorceress &&
                 !player.isFortuneCardUsed() && !player.isOnIsland()) {
             return true;
