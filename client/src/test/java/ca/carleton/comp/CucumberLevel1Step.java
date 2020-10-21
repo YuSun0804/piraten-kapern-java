@@ -28,8 +28,16 @@ public class CucumberLevel1Step {
     private Pattern pattern = Pattern.compile(rollResultRegEx);
 
 
-    @Given("^Start Game$")
-    public void startGame() {
+    @Given("Start {string}")
+    public void startGame(String t) {
+        piratenKapern = new PiratenKapern();
+        treasureChest = new HashMap<>();
+        System.out.println(" ");
+        System.out.println(t + " stared");
+    }
+
+    @Given("Start test")
+    public void startGame1() {
         piratenKapern = new PiratenKapern();
         treasureChest = new HashMap<>();
         System.out.println(" ");
@@ -56,7 +64,9 @@ public class CucumberLevel1Step {
 
     @And("Re-Roll dice {string} due to sorceress, and get {string}")
     public void reRollForSorceress(String indexes, String rollRes) {
-        this.reRoll(indexes, rollRes);
+        if (fortuneCard.getType() == FortuneCard.FortuneCardType.sorceress) {
+            this.reRoll(indexes, rollRes);
+        }
     }
 
     @And("Re-Roll dice {string}, and get {string}")
@@ -149,7 +159,7 @@ public class CucumberLevel1Step {
         assertEquals(expectedDeduction, deductionOnIsland);
     }
 
-    @And("Player can go to next round {}")
+    @Then("Player can go to next round {}")
     public void countSkull(boolean expectedCan) {
         List<Integer> indexes = new ArrayList<>(Arrays.asList(5, 6, 7));
         System.out.println("Re-roll 5, 6, 7.");

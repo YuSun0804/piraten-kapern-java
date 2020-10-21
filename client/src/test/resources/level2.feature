@@ -1,5 +1,5 @@
-Feature: play_round
-  Player wants to play a round of the game
+Feature: Test features for Level 2
+  I want to use this to scenario in level 2
 
   @T125
   Scenario: T125
