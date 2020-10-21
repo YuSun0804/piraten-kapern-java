@@ -8,7 +8,7 @@ public class PiratenKapern {
 
     private List<Dice> diceList;
     private List<FortuneCard> fortuneCardList;
-
+    private int usedCard;
 
     public PiratenKapern() {
         diceList = new ArrayList<>(8);
@@ -22,10 +22,16 @@ public class PiratenKapern {
 
 
     public FortuneCard drawFortuneCard() {
+        if (usedCard == 35) {
+            fortuneCardList = FortuneCard.getFortuneList();
+            usedCard = 0;
+        }
         while (true) {
             int i = RandomUtil.randInt(0, 34);
             FortuneCard fortuneCard = fortuneCardList.get(i);
             if (fortuneCard.getStatus() == 1) {
+                fortuneCard.setStatus(0);
+                usedCard++;
                 return fortuneCard;
             }
         }
