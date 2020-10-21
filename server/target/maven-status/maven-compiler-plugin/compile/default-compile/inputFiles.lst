@@ -1,5 +1,5 @@
-/home/kevin/repo/java/COMP5104/server/src/main/java/ca/carleton/comp/game/ScorePad.java
-/home/kevin/repo/java/COMP5104/server/src/main/java/ca/carleton/comp/network/ServerChannel.java
-/home/kevin/repo/java/COMP5104/server/src/main/java/ca/carleton/comp/GameServer.java
-/home/kevin/repo/java/COMP5104/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java
-/home/kevin/repo/java/COMP5104/server/src/main/java/ca/carleton/comp/game/ScoreRecord.java
+/home/kevin/COMP5104/server/src/main/java/ca/carleton/comp/game/ScoreRecord.java
+/home/kevin/COMP5104/server/src/main/java/ca/carleton/comp/GameServer.java
+/home/kevin/COMP5104/server/src/main/java/ca/carleton/comp/game/ScorePad.java
+/home/kevin/COMP5104/server/src/main/java/ca/carleton/comp/game/PlayerHandler.java
+/home/kevin/COMP5104/server/src/main/java/ca/carleton/comp/network/ServerChannel.java

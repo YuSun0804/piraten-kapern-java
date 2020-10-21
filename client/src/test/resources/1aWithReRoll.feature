@@ -39,7 +39,7 @@ Feature: Test features for Level 1a-with-re-roll
 
   @Test65
   Scenario Outline: Test65
-    Given Start Game
+    Given Start test
     When Draw fortuneCard, and get <fortuneCard>
     And Roll dice, and get <rollResult>
     And Re-Roll dice <reRollIndexes>, and get <reRollResult>
