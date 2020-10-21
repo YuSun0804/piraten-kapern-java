@@ -127,7 +127,7 @@ public class CucumberLevel2Step {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.sword);
             rollResult.put(7, Dice.DiceSide.sword);
-        } else if (playerId == 1271 && player1.getTurnNums() == 1) {
+        } else if (playerId == 1271 && (player1.getTurnNums() < 3)) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -136,7 +136,7 @@ public class CucumberLevel2Step {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (playerId == 1272 && player2.getTurnNums() == 1) {
+        } else if (playerId == 1272 && player2.getTurnNums() < 3) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -145,7 +145,7 @@ public class CucumberLevel2Step {
             rollResult.put(5, Dice.DiceSide.parrot);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (playerId == 1273 && player3.getTurnNums() == 1) {
+        } else if (playerId == 1273 && player3.getTurnNums() < 3) {
             rollResult.put(0, Dice.DiceSide.skull);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.skull);
@@ -154,7 +154,7 @@ public class CucumberLevel2Step {
             rollResult.put(5, Dice.DiceSide.monkey);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (playerId == 1271 && player1.getTurnNums() == 2) {
+        } else if (playerId == 1271 && player1.getTurnNums() == 3) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
@@ -163,7 +163,7 @@ public class CucumberLevel2Step {
             rollResult.put(5, Dice.DiceSide.sword);
             rollResult.put(6, Dice.DiceSide.monkey);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (playerId == 1272 && player2.getTurnNums() == 2) {
+        } else if (playerId == 1272 && player2.getTurnNums() == 3) {
             rollResult.put(0, Dice.DiceSide.diamond);
             rollResult.put(1, Dice.DiceSide.diamond);
             rollResult.put(2, Dice.DiceSide.diamond);
@@ -172,7 +172,7 @@ public class CucumberLevel2Step {
             rollResult.put(5, Dice.DiceSide.diamond);
             rollResult.put(6, Dice.DiceSide.diamond);
             rollResult.put(7, Dice.DiceSide.monkey);
-        } else if (playerId == 1273 && player3.getTurnNums() == 2) {
+        } else if (playerId == 1273 && player3.getTurnNums() == 3) {
             rollResult.put(0, Dice.DiceSide.parrot);
             rollResult.put(1, Dice.DiceSide.parrot);
             rollResult.put(2, Dice.DiceSide.parrot);
