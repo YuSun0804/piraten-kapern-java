@@ -14,6 +14,17 @@ Feature: Test features for Level 1b-sea battle
       | "Test110" | "three_sabre" | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -500      |
       | "Test111" | "four_sabre"  | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -1000     |
 
+  @Test112
+  Scenario Outline: Test112
+    Given Start <test>
+    When Draw fortuneCard, and get <fortuneCard>
+    And Roll dice, and get <rollResult>
+    Then Player lose <deduction>
+    And Player get <score>
+    Examples:
+      | test      | fortuneCard | rollResult                                                                  | deduction | score |
+      | "Test112" | "two_sabre" | "0=skull, 1=skull, 2=skull, 3=monkey, 4=parrot, 5=parrot, 6=sword, 7=sword" | -300      | 0     |
+
   @Test113116119
   Scenario Outline: Test113116119
     Given Start <test>
