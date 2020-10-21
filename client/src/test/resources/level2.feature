@@ -46,5 +46,18 @@ Feature: Test features for Level 2
     And Player 1273 draw fortuneCard
     And Player 1273 roll dice
     And Player 1273 send score
-    And Compute Winner 1272 7400
+    And Compute Winner 0 0
+    And Player 1271 start next turn
+    And Player 1272 start next turn
+    And Player 1273 start next turn
+    And Player 1271 draw fortuneCard
+    And Player 1271 roll dice
+    And Player 1271 send score
+    And Player 1272 draw fortuneCard
+    And Player 1272 roll dice
+    And Player 1272 send score
+    And Player 1273 draw fortuneCard
+    And Player 1273 roll dice
+    And Player 1273 send score
+    And Compute Winner 1272 9400
 	
