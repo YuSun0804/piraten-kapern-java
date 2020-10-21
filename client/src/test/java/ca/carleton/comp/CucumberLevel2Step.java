@@ -204,14 +204,17 @@ public class CucumberLevel2Step {
             case 1:
                 piratenKapern.computeScore(player1);
                 winnerResponseFuture1 = playerThreadPool.submit(() -> player1.sendPlayerResult());
+                System.out.println("The score player " + player1.getName() + " get in turn " + player1.getTurnNums() + " is " + player1.getScore());
                 break;
             case 2:
                 piratenKapern.computeScore(player2);
                 winnerResponseFuture2 = playerThreadPool.submit(() -> player2.sendPlayerResult());
+                System.out.println("The score player " + player2.getName() + " get in turn " + player2.getTurnNums() + " is " + player2.getScore());
                 break;
             case 3:
                 piratenKapern.computeScore(player3);
                 winnerResponseFuture3 = playerThreadPool.submit(() -> player3.sendPlayerResult());
+                System.out.println("The score player " + player3.getName() + " get in turn " + player3.getTurnNums() + " is " + player3.getScore());
                 break;
         }
     }
@@ -223,9 +226,7 @@ public class CucumberLevel2Step {
             WinnerResponse winnerResponse2 = winnerResponseFuture2.get();
             WinnerResponse winnerResponse3 = winnerResponseFuture3.get();
 
-            System.out.println("The score player " + player1.getName() + " get in turn " + player1.getTurnNums() + " is " + winnerResponse1.getPlayerScore());
-            System.out.println("The score player " + player2.getName() + " get in turn " + player2.getTurnNums() + " is " + winnerResponse2.getPlayerScore());
-            System.out.println("The score player " + player3.getName() + " get in turn " + player3.getTurnNums() + " is " + winnerResponse3.getPlayerScore());
+
             String expectedWinnerName = expectedWinnerId + "";
             if (expectedWinnerId == 0) {
                 expectedWinnerName = null;
