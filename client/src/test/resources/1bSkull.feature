@@ -47,3 +47,15 @@ Feature: Test features for Level 1b-skull
     Examples:
       | fortuneCard | rollResult                                                                   | reRollIndexes | reRollResult         | deduction |
       | "two_skull" | "0=skull, 1=skull, 2=monkey, 3=monkey, 4=skull, 5=parrot, 6=coin, 7=diamond" | "2,3"         | "2=monkey, 3=monkey" | -500      |
+
+  @Test106
+  Scenario Outline: Test106
+    Given Start test
+    When Draw fortuneCard, and get <fortuneCard>
+    And Roll dice, and get <rollResult>
+    And Re-Roll dice <reRollIndexes>, and get <reRollResult>
+    Then Player make <deduction> deduction to all other players
+    And Player get <score>
+    Examples:
+      | fortuneCard | rollResult                                                                   | reRollIndexes | reRollResult         | deduction | score |
+      | "two_skull" | "0=skull, 1=skull, 2=monkey, 3=monkey, 4=skull, 5=parrot, 6=coin, 7=diamond" | "2,3"         | "2=monkey, 3=monkey" | -500      | 0     |
